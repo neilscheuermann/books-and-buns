@@ -1,10 +1,12 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
+import { withPrefix } from 'gatsby'
+
 import './all.sass'
 import useSiteMetadata from './SiteMetadata'
-import { withPrefix } from 'gatsby'
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
+import { FOOTER_HEIGHT } from '../constants'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
@@ -48,8 +50,10 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
-      <div>{children}</div>
+      <div style={{ minHeight: `calc(100vh - ${FOOTER_HEIGHT})` }}>
+        <Navbar />
+        <div>{children}</div>
+      </div>
       <Footer />
     </div>
   )
