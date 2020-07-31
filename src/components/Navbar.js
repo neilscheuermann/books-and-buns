@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import github from '../img/github-icon.svg'
+import { COLOR_2, HEADER_HEIGHT } from '../constants'
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -42,6 +43,8 @@ const Navbar = class extends React.Component {
           top: '0',
           left: '0',
           width: '100%',
+          height: HEADER_HEIGHT,
+          backgroundColor: COLOR_2,
         }}
       >
         <div className="container">

@@ -1,8 +1,10 @@
 import styled from 'styled-components'
+import { HEADER_HEIGHT } from '../constants'
 
 export const Content = styled.div`
+  margin-top: ${HEADER_HEIGHT};
+  margin-bottom: 24px;
   margin-left: auto;
   margin-right: auto;
-  border: solid yellow 10px;
   max-width: 1336px;
 `

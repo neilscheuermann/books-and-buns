@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { withPrefix } from 'gatsby'
 
 import './all.sass'
-import '../global.css'
+import '../styles/global.css'
 import useSiteMetadata from './SiteMetadata'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
