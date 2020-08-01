@@ -1,7 +1,16 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import { COLOR_2, HEADER_HEIGHT } from '../constants'
+import bnbLogo from '../img/bnb-logo-black.svg'
+import { BORDER_COLOR, BACKGROUND_COLOR, HEADER_HEIGHT } from '../constants'
+import { MainText } from '../styles/SharedStyledComponents'
+
+const NavBarItem = ({ to, children }) => {
+  return (
+    <Link className="navbar-item" to={to}>
+      <MainText>{children}</MainText>
+    </Link>
+  )
+}
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -44,14 +53,16 @@ const Navbar = class extends React.Component {
           left: '0',
           width: '100%',
           height: HEADER_HEIGHT,
-          backgroundColor: COLOR_2,
+          backgroundColor: BACKGROUND_COLOR,
+          borderBottom: `solid ${BORDER_COLOR} 1px`,
         }}
       >
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src={null} alt="BooksAndBuns" style={{ width: '88px' }} />
+              <img src={bnbLogo} alt="BooksAndBuns" style={{ width: '88px' }} />
             </Link>
+            {/*                */}
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
@@ -62,42 +73,20 @@ const Navbar = class extends React.Component {
               <span />
               <span />
             </div>
+            {/* ------------ */}
+            {/*              */}
           </div>
           <div
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/products">
-                About
-              </Link>
-              <Link className="navbar-item" to="/about">
-                Editing
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Podcasts
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Books
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
+              <NavBarItem to="/products">About</NavBarItem>
+              <NavBarItem to="/about">Editing</NavBarItem>
+              <NavBarItem to="/blog">Podcasts</NavBarItem>
+              <NavBarItem to="/blog">Books</NavBarItem>
+              <NavBarItem to="/contact">Contact</NavBarItem>
+              <NavBarItem to="/contact/examples">Form Examples</NavBarItem>
             </div>
           </div>
         </div>

@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { COLOR_1 } from '../constants'
+import { SECONDARY_COLOR, BACKGROUND_COLOR, COLOR_1 } from '../constants'
 
 export const MainImage = styled.div`
   background-image: url(${({ imgUrl }) => imgUrl});
-  background-position: top left;
+  background-position: 50% 85%;
   background-attachment: fixed;
   background-size: cover;
   height: 600px;
@@ -11,34 +11,46 @@ export const MainImage = styled.div`
 
 export const TextBox = styled.div`
   position: absolute;
-  width: 50%;
+  width: 35%;
   z-index: 1;
-  background-color: white;
   padding: 40px 20px 20px 20px;
 `
 
+// Pulled in custom Noteworthy Light font with this tutorial
+// https://dev.to/alaskaa/how-to-import-a-web-font-into-your-react-app-with-styled-components-4-1dni
 export const WelcomeText = styled.h1`
-  background-color: ${COLOR_1};
+  font-family: 'Noteworthy Light';
   color: white;
-  line-height: 2;
-  font-size: 30px;
+  font-size: 75px;
   position: absolute;
-  top: -16px;
+  text-shadow: 2px 2px 3px gray;
+  transform: rotate(-3deg);
+  top: -176px;
   left: 10px;
   z-index: 2;
 `
 
-export const Img = styled.img`
+export const Img2 = styled.img`
   position: absolute;
   left: 40%;
   width: 60%;
   height: ${({ imgHeight }) => imgHeight};
-  objectfit: cover;
+  object-fit: cover;
+`
+
+export const Img3 = styled.img`
+  position: absolute;
+  left: 5%;
+  top: -200px;
+  width: 30%;
+  height: ${({ imgHeight }) => imgHeight};
+  object-fit: cover;
 `
 
 export const SmallTextBox = styled.div`
   position: absolute;
   left: 5%;
+  top: 120px;
   width: 25%;
   padding: 20px;
 `
@@ -49,4 +61,5 @@ export const EmailTreat = styled.div`
   top: 20px;
   width: 25%;
   padding: 20px;
+  background-color: ${SECONDARY_COLOR};
 `

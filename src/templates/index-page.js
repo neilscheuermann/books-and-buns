@@ -1,16 +1,18 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import file_example_JPG_500kB from './file_example_JPG_500kB.jpg'
-import titleImgBethany from '../img/title-bethany.jpg'
+import homeWelcome from '../img/home-welcome.jpg'
+// import titleImgBethany from '../img/title-bethany.jpg'
+import titleImgTemp from '../img/title-temp.jpg'
 import {
-  Img,
+  Img2,
+  Img3,
   MainImage,
   SmallTextBox,
   EmailTreat,
   TextBox,
   WelcomeText,
 } from './IndexPageStyledComponents'
-import { PText } from '../styles/SharedStyledComponents'
+import { MainText } from '../styles/SharedStyledComponents'
 
 const IMG_HEIGHT = '600px'
 
@@ -18,30 +20,28 @@ const IndexPage = () => {
   return (
     <Layout>
       <div>
-        <MainImage className="full-width" imgUrl={titleImgBethany}></MainImage>
-
-        <div style={{ position: 'relative', height: IMG_HEIGHT }}>
-          <WelcomeText>Welcome!</WelcomeText>
-          <TextBox className="border box-shadow">
-            <PText>
+        <MainImage className="full-width" imgUrl={titleImgTemp}></MainImage>
+        <div
+          style={{
+            position: 'relative',
+            height: IMG_HEIGHT,
+            marginTop: '100px',
+          }}
+        >
+          {/* <WelcomeText>Welcome!</WelcomeText> */}
+          <TextBox>
+            <h2>Mission Statement</h2>
+            <MainText>
               We believe that good coffee has the power to bring people
               together. That’s why we decided to turn a corner of our shop into
               a cozy meeting space where you can hang out with fellow coffee
               lovers and learn about coffee making techniques. All of the
               artwork on display there is for sale. The full price you pay goes
               to the artist.
-            </PText>
-            <PText>
-              We believe that good coffee has the power to bring people
-              together. That’s why we decided to turn a corner of our shop into
-              a cozy meeting space where you can hang out with fellow coffee
-              lovers and learn about coffee making techniques. All of the
-              artwork on display there is for sale. The full price you pay goes
-              to the artist.
-            </PText>
+            </MainText>
           </TextBox>
-          <Img
-            src={file_example_JPG_500kB}
+          <Img2
+            src={homeWelcome}
             alt="sample"
             className="border box-shadow"
             imgHeight={IMG_HEIGHT}
@@ -52,18 +52,24 @@ const IndexPage = () => {
           style={{
             position: 'relative',
             marginTop: '20px',
-            height: '200px',
+            height: '300px',
           }}
         >
-          <SmallTextBox className="border box-shadow">
-            <PText>
+          <Img3
+            src={homeWelcome}
+            alt="sample"
+            className="border box-shadow"
+            imgHeight="300px"
+          />
+          <SmallTextBox>
+            <MainText>
               We believe that good coffee has the power to bring people
               together.
-            </PText>
+            </MainText>
           </SmallTextBox>
 
           <EmailTreat className="border box-shadow">
-            <PText>freebee email treat</PText>
+            <MainText>freebee email treat (will be a button)</MainText>
           </EmailTreat>
         </div>
       </div>

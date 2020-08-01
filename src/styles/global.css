@@ -1,6 +1,14 @@
+body {
+  background-color: rgb(218, 228, 245);
+}
+
+.big-ass-border {
+  border: solid 10px yellow;
+}
+
 .border{
-  border: solid gray 1px;
   border-radius: 5px;
+  border: solid 1px rgb(184, 191, 204);
 }
 
 .box-shadow{
