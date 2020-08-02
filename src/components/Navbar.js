@@ -8,7 +8,7 @@ import {
   HEADER_HEIGHT,
   HEADER_HEIGHT_MOBILE,
 } from '../constants'
-import { Amper, LogoText } from './navbarStyledComponents'
+import { Amper, LogoText } from './NavbarStyledComponents'
 import { MainText } from '../styles/SharedStyledComponents'
 
 const NavBarItem = ({ to, children }) => {
