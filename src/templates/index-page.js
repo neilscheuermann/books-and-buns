@@ -12,7 +12,7 @@ import {
   SmallTextBox,
   Section1TextBox,
   Section1WelcomeText,
-} from './IndexPageStyledComponents'
+} from './indexPageStyledComponents'
 import { MainText } from '../styles/SharedStyledComponents'
 
 const IMG_HEIGHT_WEB = '600px'
