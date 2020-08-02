@@ -9,7 +9,7 @@ import {
   Section1TextBox,
   Section1TextWrapper,
   Section1WelcomeText,
-} from './indexPageStyledComponents'
+} from './IndexPageStyledComponents'
 import { HeaderImage, MainText } from '../styles/SharedStyledComponents'
 
 const IMG_HEIGHT_WEB = '600px'
