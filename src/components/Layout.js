@@ -9,7 +9,6 @@ import useSiteMetadata from './SiteMetadata'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import {
-  FOOTER_HEIGHT,
   MOBILE_WIDTH_MAX,
   TABLET_WIDTH_MAX,
   TABLET_WIDTH_MIN,
@@ -19,10 +18,12 @@ import GlobalFonts from '../fonts/fonts'
 
 const Example = () => {
   const isDesktopOrLaptop = useMediaQuery({
-    query: '(min-device-width: 1224px)',
+    query: `(min-device-width: ${TABLET_WIDTH_MAX})`,
   })
   const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' })
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  const isTabletOrMobile = useMediaQuery({
+    query: `(max-width: ${TABLET_WIDTH_MAX})`,
+  })
   const isTabletOrMobileDevice = useMediaQuery({
     query: '(max-device-width: 1224px)',
   })
@@ -105,7 +106,7 @@ const TemplateWrapper = ({ children }) => {
           <Content>{children}</Content>
         </div>
         <Footer />
-        <Example />
+        {false && <Example />}
       </div>
     </div>
   )

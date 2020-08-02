@@ -1,63 +1,43 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import homeWelcome from '../img/home-welcome.jpg'
+import { MainText } from '../styles/SharedStyledComponents'
+import { Img2, TextBox, WelcomeText } from './aboutPageStyledComponents'
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
+const IMG_HEIGHT = '600px'
 
-  return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-AboutPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  contentComponent: PropTypes.func,
-}
-
-const AboutPage = ({ data }) => {
-  const { markdownRemark: post } = data
-
+const AboutPage = () => {
   return (
     <Layout>
-      <AboutPageTemplate
-        contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
-      />
+      <div
+        style={{
+          position: 'relative',
+          height: IMG_HEIGHT,
+        }}
+      >
+        <WelcomeText>About Us!</WelcomeText>
+        <TextBox>
+          <MainText>
+            We believe that good coffee has the power to bring people together.
+            That’s why we decided to turn a corner of our shop into a cozy
+            meeting space where you can hang out with fellow coffee lovers and
+            learn about coffee making techniques. All of the artwork on display
+            there is for sale. The full price you pay goes to the artist.
+          </MainText>
+        </TextBox>
+        <Img2
+          src={homeWelcome}
+          alt="sample"
+          className="border box-shadow"
+          imgHeight={IMG_HEIGHT}
+        />
+      </div>
     </Layout>
   )
 }
 
-AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
-}
-
 export default AboutPage
 
-export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        title
-      }
-    }
-  }
-`
+export const AboutPageTemplate = () => {
+  return <div>TODO>>> Will need to remove this later</div>
+}

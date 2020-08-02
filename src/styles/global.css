@@ -19,8 +19,7 @@ body {
   color: white;
 }
 
-.full-width{
-  position: relative;
+.make-full-width{
   left: 50%;
   right: 50%;
   margin-left: -50vw;

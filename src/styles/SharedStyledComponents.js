@@ -6,6 +6,7 @@ export const MainText = styled.p`
   font-family: 'Tw Cen Medium Regular';
   line-height: 1.5;
   font-size: 1.5em;
+  margin: 16px;
 `
 
 export const Button = styled.button`

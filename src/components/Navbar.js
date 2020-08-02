@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import bnbLogo from '../img/bnb-logo-black.svg'
-import { BORDER_COLOR, BACKGROUND_COLOR, HEADER_HEIGHT } from '../constants'
+import useReactResponsive from '../hooks/useReactResponsive'
+import {
+  BORDER_COLOR,
+  BACKGROUND_COLOR,
+  HEADER_HEIGHT,
+  HEADER_HEIGHT_MOBILE,
+} from '../constants'
+import { Amper, LogoText } from './navbarStyledComponents'
 import { MainText } from '../styles/SharedStyledComponents'
 
 const NavBarItem = ({ to, children }) => {
@@ -15,6 +22,7 @@ const NavBarItem = ({ to, children }) => {
 const Navbar = () => {
   const [navBarActiveClass, setNavBarActiveClass] = useState('')
   const [active, setActive] = useState(false)
+  const { isTabletOrMobile } = useReactResponsive()
 
   useEffect(() => {
     active ? setNavBarActiveClass('is-active') : setNavBarActiveClass()
@@ -34,7 +42,7 @@ const Navbar = () => {
         top: '0',
         left: '0',
         width: '100%',
-        height: HEADER_HEIGHT,
+        height: isTabletOrMobile ? HEADER_HEIGHT_MOBILE : HEADER_HEIGHT,
         backgroundColor: BACKGROUND_COLOR,
         borderBottom: `solid ${BORDER_COLOR} 1px`,
       }}
@@ -42,7 +50,10 @@ const Navbar = () => {
       <div className="container">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" title="Logo">
-            <img src={bnbLogo} alt="BooksAndBuns" style={{ width: '88px' }} />
+            <img src={bnbLogo} alt="BooksAndBuns" style={{ width: '58px' }} />
+            <LogoText>
+              books <Amper>&</Amper> buns
+            </LogoText>
           </Link>
           {/*                */}
           {/* Hamburger menu */}
@@ -60,12 +71,13 @@ const Navbar = () => {
         </div>
         <div id="navMenu" className={`navbar-menu ${navBarActiveClass}`}>
           <div className="navbar-start has-text-centered">
-            <NavBarItem to="/products">About</NavBarItem>
-            <NavBarItem to="/about">Editing</NavBarItem>
-            <NavBarItem to="/blog">Podcasts</NavBarItem>
+            <NavBarItem to="/">Home</NavBarItem>
+            <NavBarItem to="/about">About</NavBarItem>
+            <NavBarItem to="/editing">Editing</NavBarItem>
+            <NavBarItem to="/podcasts">Podcasts</NavBarItem>
             <NavBarItem to="/blog">Books</NavBarItem>
             <NavBarItem to="/contact">Contact</NavBarItem>
-            <NavBarItem to="/contact/examples">Form Examples</NavBarItem>
+            {/* <NavBarItem to="/contact/examples">Form Examples</NavBarItem> */}
           </div>
         </div>
       </div>

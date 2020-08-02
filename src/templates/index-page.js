@@ -1,36 +1,49 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import useReactResponsive from '../hooks/useReactResponsive'
 import homeWelcome from '../img/home-welcome.jpg'
-// import titleImgBethany from '../img/title-bethany.jpg'
 import titleImgTemp from '../img/title-temp.jpg'
 import {
-  Img2,
+  Section1Img,
   Img3,
   MainImage,
+  Section1,
+  Section2,
   SmallTextBox,
-  EmailTreat,
-  TextBox,
-  WelcomeText,
+  Section1TextBox,
+  Section1WelcomeText,
 } from './IndexPageStyledComponents'
 import { MainText } from '../styles/SharedStyledComponents'
 
-const IMG_HEIGHT = '600px'
+const IMG_HEIGHT_WEB = '600px'
+const IMG_HEIGHT_MOBILE = '200px'
 
 const IndexPage = () => {
+  const { isTabletOrMobile } = useReactResponsive()
+
   return (
     <Layout>
       <div>
-        <MainImage className="full-width" imgUrl={titleImgTemp}></MainImage>
-        <div
-          style={{
-            position: 'relative',
-            height: IMG_HEIGHT,
-            marginTop: '100px',
-          }}
+        <div>
+          <MainImage
+            className={!isTabletOrMobile ? 'make-full-width' : ''}
+            imgUrl={titleImgTemp}
+            imgHeight={isTabletOrMobile ? IMG_HEIGHT_MOBILE : IMG_HEIGHT_WEB}
+          />
+        </div>
+        {/* Section 1 */}
+        <Section1
+          divHeight={isTabletOrMobile ? IMG_HEIGHT_MOBILE : IMG_HEIGHT_WEB}
         >
-          {/* <WelcomeText>Welcome!</WelcomeText> */}
-          <TextBox>
-            <h2>Mission Statement</h2>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
+            <Section1WelcomeText>Welcome!</Section1WelcomeText>
+          </div>
+          <Section1TextBox>
             <MainText>
               We believe that good coffee has the power to bring people
               together. That’s why we decided to turn a corner of our shop into
@@ -39,39 +52,28 @@ const IndexPage = () => {
               artwork on display there is for sale. The full price you pay goes
               to the artist.
             </MainText>
-          </TextBox>
-          <Img2
+          </Section1TextBox>
+          <Section1Img
             src={homeWelcome}
             alt="sample"
             className="border box-shadow"
-            imgHeight={IMG_HEIGHT}
+            imgHeight={IMG_HEIGHT_WEB}
           />
-        </div>
-
-        <div
-          style={{
-            position: 'relative',
-            marginTop: '20px',
-            height: '300px',
-          }}
-        >
-          <Img3
-            src={homeWelcome}
-            alt="sample"
-            className="border box-shadow"
-            imgHeight="300px"
-          />
-          <SmallTextBox>
-            <MainText>
-              We believe that good coffee has the power to bring people
-              together.
-            </MainText>
-          </SmallTextBox>
-
-          <EmailTreat className="border box-shadow">
-            <MainText>freebee email treat (will be a button)</MainText>
-          </EmailTreat>
-        </div>
+        </Section1>
+        {/* <Section2> */}
+        {/*   <Img3 */}
+        {/*     src={homeWelcome} */}
+        {/*     alt="sample" */}
+        {/*     className="border box-shadow" */}
+        {/*     imgHeight="300px" */}
+        {/*   /> */}
+        {/*   <SmallTextBox> */}
+        {/*     <MainText> */}
+        {/*       We believe that good coffee has the power to bring people */}
+        {/*       together. */}
+        {/*     </MainText> */}
+        {/*   </SmallTextBox> */}
+        {/* </Section2> */}
       </div>
     </Layout>
   )

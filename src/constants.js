@@ -1,6 +1,7 @@
 // CSS Constants
 export const FOOTER_HEIGHT = '64px'
 export const HEADER_HEIGHT = '96px'
+export const HEADER_HEIGHT_MOBILE = '68px'
 
 // Same as body background-color in global.css
 export const BACKGROUND_COLOR = 'rgb(218, 228, 245)'
@@ -15,6 +16,7 @@ export const COLOR_2 = 'grey'
 export const MOBILE_WIDTH_MAX = '768px'
 export const TABLET_WIDTH_MIN = '769px'
 export const TABLET_WIDTH_MAX = '1023px'
+export const TABLET_WIDTH_MAX_PLUS_1 = '1024px'
 
 /*
 According to bulma's website 
