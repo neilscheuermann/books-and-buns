@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { TABLET_WIDTH_MAX_PLUS_1 } from '../constants'
 
+// Section 1
+//
 export const Section1 = styled.div`
   margin-top: 24px;
 
@@ -38,4 +40,21 @@ export const Section1WelcomeText = styled.h1`
   transform: rotate(-3deg);
   display: flex;
   justify-content: center;
+`
+
+// Section ...
+//
+export const EmailWrapper = styled.div`
+  margin: 80px 0 40px;
+  display: flex;
+  justify-content: center;
+`
+
+export const Img3 = styled.img`
+  position: absolute;
+  left: 5%;
+  top: -200px;
+  width: 30%;
+  height: ${({ imgHeight }) => imgHeight};
+  object-fit: cover;
 `
