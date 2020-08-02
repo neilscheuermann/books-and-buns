@@ -2,6 +2,10 @@ body {
   background-color: rgb(218, 228, 245);
 }
 
+strong {
+  font-weight: 900;
+}
+
 .big-ass-border {
   border: solid 10px yellow;
 }

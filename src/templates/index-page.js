@@ -45,12 +45,18 @@ const IndexPage = () => {
           </div>
           <Section1TextBox>
             <MainText>
-              We believe that good coffee has the power to bring people
-              together. That’s why we decided to turn a corner of our shop into
-              a cozy meeting space where you can hang out with fellow coffee
-              lovers and learn about coffee making techniques. All of the
-              artwork on display there is for sale. The full price you pay goes
-              to the artist.
+              We offer detailed <strong>Concept Editing</strong> because writing
+              a story can be a lonely calling. you often just need someone to
+              brainstorm with or someone to take a step back to see the big
+              picture. That is easy to miss when every detail of your story is
+              under scrutiny. It's like missing the forest for the trees. That's
+              where we come in. Show us your forest!
+            </MainText>
+            <MainText>
+              Once you have your story down on paper, First step: take a huge
+              sigh of relief and a fist bump, cause ... ya boss. Second step: we
+              are here for the <strong>Copy Edit</strong>, to cross your t's and
+              dot those i's.
             </MainText>
           </Section1TextBox>
           <Section1Img

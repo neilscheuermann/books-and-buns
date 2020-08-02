@@ -15,7 +15,10 @@ export default function Footer() {
           style={{ width: '1.5em', height: '1.5em' }}
         />
       </SocialLink>
-      <SocialLink title="instagram" href="https://instagram.com">
+      <SocialLink
+        title="instagram"
+        href="https://www.instagram.com/books.buns/"
+      >
         <img
           src={instagram}
           alt="Instagram"
