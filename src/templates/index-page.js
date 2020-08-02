@@ -5,6 +5,7 @@ import homeWelcome from '../img/home-welcome.jpg'
 import titleImgTemp from '../img/title-temp.jpg'
 import {
   Section1Img,
+  EmailWrapper,
   Img3,
   MainImage,
   Section1,
@@ -45,8 +46,10 @@ const IndexPage = () => {
           </div>
           <Section1TextBox>
             <MainText>
-              We offer detailed <strong>Concept Editing</strong> because writing
-              a story can be a lonely calling. you often just need someone to
+              We are{' '}
+              <strong style={{ fontSize: '1.25em' }}>Books and Buns</strong>! We
+              offer detailed <strong>Concept Editing</strong> because writing a
+              story can be a lonely calling. you often just need someone to
               brainstorm with or someone to take a step back to see the big
               picture. That is easy to miss when every detail of your story is
               under scrutiny. It's like missing the forest for the trees. That's
@@ -81,6 +84,12 @@ const IndexPage = () => {
         {/*   </SmallTextBox> */}
         {/* </Section2> */}
       </div>
+      <EmailWrapper>
+        <MainText>
+          More coming soon! Please follow us below or email us at
+          books.buns.co@gmail.com
+        </MainText>
+      </EmailWrapper>
     </Layout>
   )
 }

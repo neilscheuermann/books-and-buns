@@ -3,7 +3,7 @@ import React from 'react'
 import instagram from '../img/social/instagram.svg'
 import twitter from '../img/social/twitter.svg'
 
-import { SocialLink, Wrapper } from './FooterStyledComponents'
+import { FontCredit, SocialLink, Wrapper } from './FooterStyledComponents'
 
 export default function Footer() {
   return (
@@ -26,11 +26,11 @@ export default function Footer() {
         />
       </SocialLink>
       {/* TODO>>>: Add email link */}
-      <div>
+      <FontCredit>
         Font made from{' '}
         <a href="http://www.onlinewebfonts.com">oNline Web Fonts</a> is licensed
         by CC BY 3.0
-      </div>
+      </FontCredit>
     </Wrapper>
   )
 }

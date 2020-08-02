@@ -7,21 +7,12 @@ import {
   TABLET_WIDTH_MAX_PLUS_1,
 } from '../constants'
 
-export const Img3 = styled.img`
-  position: absolute;
-  left: 5%;
-  top: -200px;
-  width: 30%;
-  height: ${({ imgHeight }) => imgHeight};
-  object-fit: cover;
-`
-
 export const MainImage = styled.div`
   background-image: url(${({ imgUrl }) => imgUrl});
   height: ${({ imgHeight }) => imgHeight};
 
   ${/* Web */ ''}
-    @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
     background-position: 50% 85%;
     background-attachment: fixed;
     background-size: cover;
@@ -43,12 +34,14 @@ export const SmallTextBox = styled.div`
   padding: 20px;
 `
 
+// Section 1
+//
 export const Section1 = styled.div`
   ${/* Web */ ''}
   @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
     position: relative;
     height: ${({ divHeight }) => divHeight};
-    margin-top: 100px;
+    margin-top: 120px;
   }
 `
 
@@ -98,8 +91,27 @@ export const Section1WelcomeText = styled.h1`
   }
 `
 
+// Section 2
+//
 export const Section2 = styled.div`
   position: relative;
   height: 300px;
   margin-top: 20px;
+`
+
+// Section ...
+//
+export const EmailWrapper = styled.div`
+  margin: 80px 0 40px;
+  display: flex;
+  justify-content: center;
+`
+
+export const Img3 = styled.img`
+  position: absolute;
+  left: 5%;
+  top: -200px;
+  width: 30%;
+  height: ${({ imgHeight }) => imgHeight};
+  object-fit: cover;
 `
