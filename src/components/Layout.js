@@ -25,7 +25,7 @@ const Example = () => {
     query: `(max-width: ${TABLET_WIDTH_MAX})`,
   })
   const isTabletOrMobileDevice = useMediaQuery({
-    query: '(max-device-width: 1224px)',
+    query: `(max-device-width: ${TABLET_WIDTH_MAX})`,
   })
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
   const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' })
@@ -105,8 +105,8 @@ const TemplateWrapper = ({ children }) => {
         <div>
           <Content>{children}</Content>
         </div>
-        <Footer />
         {false && <Example />}
+        <Footer />
       </div>
     </div>
   )

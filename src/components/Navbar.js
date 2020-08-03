@@ -22,7 +22,7 @@ const NavBarItem = ({ to, children }) => {
 const Navbar = () => {
   const [navBarActiveClass, setNavBarActiveClass] = useState('')
   const [active, setActive] = useState(false)
-  const { isTabletOrMobile } = useReactResponsive()
+  const { isTabletOrMobileDevice } = useReactResponsive()
 
   useEffect(() => {
     active ? setNavBarActiveClass('is-active') : setNavBarActiveClass()
@@ -42,7 +42,7 @@ const Navbar = () => {
         top: '0',
         left: '0',
         width: '100%',
-        height: isTabletOrMobile ? HEADER_HEIGHT_MOBILE : HEADER_HEIGHT,
+        height: isTabletOrMobileDevice ? HEADER_HEIGHT_MOBILE : HEADER_HEIGHT,
         backgroundColor: BACKGROUND_COLOR,
         borderBottom: `solid ${BORDER_COLOR} 1px`,
       }}

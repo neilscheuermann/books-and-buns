@@ -20,22 +20,22 @@ const IMG_HEIGHT_WEB = '600px'
 const IMG_HEIGHT_MOBILE = '200px'
 
 const IndexPage = () => {
-  const { isTabletOrMobile } = useReactResponsive()
+  const { isTabletOrMobileDevice } = useReactResponsive()
 
   return (
     <Layout>
       <div>
         <div>
           <MainImage
-            className={!isTabletOrMobile ? 'make-full-width' : ''}
+            className={!isTabletOrMobileDevice ? 'make-full-width' : ''}
             imgUrl={titleImgTemp}
-            imgHeight={isTabletOrMobile ? IMG_HEIGHT_MOBILE : IMG_HEIGHT_WEB}
+            imgHeight={
+              isTabletOrMobileDevice ? IMG_HEIGHT_MOBILE : IMG_HEIGHT_WEB
+            }
           />
         </div>
         {/* Section 1 */}
-        <Section1
-          divHeight={isTabletOrMobile ? IMG_HEIGHT_MOBILE : IMG_HEIGHT_WEB}
-        >
+        <Section1 divHeight={!isTabletOrMobileDevice && IMG_HEIGHT_WEB}>
           <div
             style={{
               display: 'flex',
