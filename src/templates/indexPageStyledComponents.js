@@ -1,11 +1,5 @@
 import styled from 'styled-components'
-import {
-  BACKGROUND_COLOR,
-  COLOR_1,
-  HEADER_HEIGHT_MOBILE,
-  TABLET_WIDTH_MAX,
-  TABLET_WIDTH_MAX_PLUS_1,
-} from '../constants'
+import { TABLET_WIDTH_MAX, TABLET_WIDTH_MAX_PLUS_1 } from '../constants'
 
 export const Section1 = styled.div`
   margin-top: 24px;
@@ -63,14 +57,6 @@ export const MainImage = styled.div`
     background-size: cover;
     margin-top: 80px;
   }
-`
-
-export const SmallTextBox = styled.div`
-  position: absolute;
-  left: 5%;
-  top: 120px;
-  width: 25%;
-  padding: 20px;
 `
 
 // Section 1
@@ -131,28 +117,3 @@ export const SmallTextBox = styled.div`
 //     margin: 24px 0 8px;
 //   }
 // `
-
-// Section 2
-//
-export const Section2 = styled.div`
-  position: relative;
-  height: 300px;
-  margin-top: 20px;
-`
-
-// Section ...
-//
-export const EmailWrapper = styled.div`
-  margin: 80px 0 40px;
-  display: flex;
-  justify-content: center;
-`
-
-export const Img3 = styled.img`
-  position: absolute;
-  left: 5%;
-  top: -200px;
-  width: 30%;
-  height: ${({ imgHeight }) => imgHeight};
-  object-fit: cover;
-`
