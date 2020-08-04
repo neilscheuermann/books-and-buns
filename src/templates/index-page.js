@@ -50,9 +50,8 @@ const IndexPage = () => {
           </Section1TextWrapper>
           <Section1Img
             src={bethLindsTable}
-            alt="sample"
+            alt="Lindsay and Bethany"
             className="border box-shadow"
-            imgHeight={IMG_HEIGHT_WEB}
           />
         </Section1>
       </div>
