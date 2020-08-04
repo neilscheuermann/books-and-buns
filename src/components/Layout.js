@@ -8,11 +8,7 @@ import '../styles/global.css'
 import useSiteMetadata from './SiteMetadata'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-import {
-  MOBILE_WIDTH_MAX,
-  TABLET_WIDTH_MAX,
-  TABLET_WIDTH_MIN,
-} from '../constants'
+import { TABLET_WIDTH_MAX } from '../constants'
 import { Content } from './LayoutStyledComponents'
 import GlobalFonts from '../fonts/fonts'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
+// import twitter from '../img/social/twitter.svg'
 
 import { FontCredit, SocialLink, Wrapper } from './FooterStyledComponents'
 

@@ -5,12 +5,8 @@ import homeWelcome from '../img/home-welcome.jpg'
 import titleImgTemp from '../img/title-temp.jpg'
 import {
   Section1Img,
-  EmailWrapper,
-  Img3,
   MainImage,
   Section1,
-  Section2,
-  SmallTextBox,
   Section1TextBox,
   Section1TextWrapper,
   Section1WelcomeText,
