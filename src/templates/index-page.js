@@ -26,13 +26,11 @@ const IndexPage = () => {
   return (
     <Layout>
       <div>
-        <div>
-          <MainImage
-            className={!isMobile ? 'make-full-width' : ''}
-            imgUrl={titleImgTemp}
-            imgHeight={isMobile ? IMG_HEIGHT_MOBILE : IMG_HEIGHT_WEB}
-          />
-        </div>
+        <MainImage
+          className={!isMobile ? 'make-full-width' : ''}
+          imgUrl={titleImgTemp}
+          imgHeight={isMobile ? IMG_HEIGHT_MOBILE : IMG_HEIGHT_WEB}
+        />
         <Section1>
           <Section1TextWrapper>
             <Section1WelcomeText>Welcome!</Section1WelcomeText>
