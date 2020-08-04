@@ -5,8 +5,11 @@ const useReactResponsive = () => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: `(max-device-width: ${TABLET_WIDTH_MAX})`,
   })
+  const isTabletOrMobile = useMediaQuery({
+    query: `(max-width: ${TABLET_WIDTH_MAX})`,
+  })
 
-  return { isTabletOrMobileDevice }
+  return { isMobile: isTabletOrMobileDevice || isTabletOrMobile }
 }
 
 export default useReactResponsive

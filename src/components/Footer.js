@@ -8,13 +8,13 @@ import { FontCredit, SocialLink, Wrapper } from './FooterStyledComponents'
 export default function Footer() {
   return (
     <Wrapper>
-      <SocialLink title="twitter" href="https://twitter.com">
-        <img
-          src={twitter}
-          alt="Twitter"
-          style={{ width: '1.5em', height: '1.5em' }}
-        />
-      </SocialLink>
+      {/* <SocialLink title="twitter" href="https://twitter.com"> */}
+      {/*   <img */}
+      {/*     src={twitter} */}
+      {/*     alt="Twitter" */}
+      {/*     style={{ width: '1.5em', height: '1.5em' }} */}
+      {/*   /> */}
+      {/* </SocialLink> */}
       <SocialLink
         title="instagram"
         href="https://www.instagram.com/books.buns/"

@@ -29,3 +29,20 @@ strong {
   margin-left: -50vw;
   margin-right: -50vw;
 }
+
+/* For quick deving purposes */
+.dev-red-border {
+  border: solid red 2px;
+}
+.dev-orange-border {
+  border: solid orange 2px;
+}
+.dev-yellow-border {
+  border: solid yellow 2px;
+}
+.dev-green-border {
+  border: solid green 2px;
+}
+.dev-blue-border {
+  border: solid blue 2px;
+}

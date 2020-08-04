@@ -7,6 +7,45 @@ import {
   TABLET_WIDTH_MAX_PLUS_1,
 } from '../constants'
 
+export const Section1 = styled.div`
+  margin-top: 24px;
+
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    display: flex;
+  }
+`
+
+export const Section1TextBox = styled.div`
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+  }
+`
+export const Section1TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+
+export const Section1Img = styled.img`
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    width: 60%;
+    object-fit: cover;
+    margin: 16px;
+    margin-top: 24px;
+  }
+`
+
+export const Section1WelcomeText = styled.h1`
+  font-family: 'Noteworthy Light';
+  color: black;
+  font-size: 65px;
+  transform: rotate(-3deg);
+  display: flex;
+  justify-content: center;
+`
+
 export const MainImage = styled.div`
   background-image: url(${({ imgUrl }) => imgUrl});
   height: ${({ imgHeight }) => imgHeight};
@@ -36,60 +75,62 @@ export const SmallTextBox = styled.div`
 
 // Section 1
 //
-export const Section1 = styled.div`
-  ${/* Web */ ''}
-  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
-    position: relative;
-    height: ${({ divHeight }) => divHeight};
-    margin-top: 120px;
-  }
-`
-
-export const Section1TextBox = styled.div`
-  ${/* Web */ ''}
-  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
-    position: absolute;
-    width: 35%;
-    z-index: 1;
-    padding: 40px 20px 20px 20px;
-  }
-`
-
-export const Section1Img = styled.img`
-  ${/* Web */ ''}
-  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
-    position: absolute;
-    left: 40%;
-    width: 60%;
-    height: ${({ imgHeight }) => imgHeight};
-    object-fit: cover;
-  }
-`
-
-// Pulled in custom Noteworthy Light font with this tutorial
-// https://dev.to/alaskaa/how-to-import-a-web-font-into-your-react-app-with-styled-components-4-1dni
-export const Section1WelcomeText = styled.h1`
-  ${/* Web */ ''}
-  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
-    font-family: 'Noteworthy Light';
-    color: black;
-    font-size: 65px;
-    position: absolute;
-    transform: rotate(-3deg);
-    top: -76px;
-    left: 102px;
-    z-index: 2;
-  }
-
-  ${/* Mobile or Tablet*/ ''}
-  @media (max-width: ${TABLET_WIDTH_MAX}) {
-    font-family: 'Noteworthy Light';
-    color: black;
-    font-size: 45px;
-    transform: rotate(-3deg);
-    margin: 24px 0 8px;
-  }
-`
+// export const Section1 = styled.div`
+//   ${/* Web */ ''}
+//   @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+//     position: relative;
+//     height: ${({ divHeight }) => divHeight};
+//     margin-top: 120px;
+//   }
+// `
+//
+// export const Section1TextBox = styled.div`
+//   ${/* Web */ ''}
+//   @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+//     position: absolute;
+//     width: 35%;
+//     z-index: 1;
+//     padding: 40px 20px 20px 20px;
+//   }
+// `
+//
+// export const Section1Img = styled.img`
+//   ${/* Web */ ''}
+//   @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+//     position: absolute;
+//     left: 40%;
+//     width: 60%;
+//     height: ${({ imgHeight }) => imgHeight};
+//     object-fit: cover;
+//   }
+// `
+//
+// // Pulled in custom Noteworthy Light font with this tutorial
+// // https://dev.to/alaskaa/how-to-import-a-web-font-into-your-react-app-with-styled-components-4-1dni
+// export const Section1WelcomeText = styled.h1`
+//   ${/* Web */ ''}
+//   @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+//     font-family: 'Noteworthy Light';
+//     color: black;
+//     font-size: 65px;
+//     position: absolute;
+//     transform: rotate(-3deg);
+//     top: -76px;
+//     left: 102px;
+//     z-index: 2;
+//     display: flex;
+//     justify-content: center;
+//   }
+//
+//   ${/* Mobile or Tablet*/ ''}
+//   @media (max-width: ${TABLET_WIDTH_MAX}) {
+//     font-family: 'Noteworthy Light';
+//     color: black;
+//     font-size: 45px;
+//     transform: rotate(-3deg);
+//     margin: 24px 0 8px;
+//   }
+// `
 
 // Section 2
 //
