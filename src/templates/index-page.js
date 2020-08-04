@@ -1,17 +1,16 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import useReactResponsive from '../hooks/useReactResponsive'
-import homeWelcome from '../img/home-welcome.jpg'
-import titleImgTemp from '../img/title-temp.jpg'
+import bethLindsTable from '../img/beth-linds-table.jpg'
+import bethLindsSaltLake from '../img/beth-linds-salt-lake.jpg'
 import {
   Section1Img,
-  MainImage,
   Section1,
   Section1TextBox,
   Section1TextWrapper,
   Section1WelcomeText,
 } from './indexPageStyledComponents'
-import { MainText } from '../styles/SharedStyledComponents'
+import { HeaderImage, MainText } from '../styles/SharedStyledComponents'
 
 const IMG_HEIGHT_WEB = '600px'
 const IMG_HEIGHT_MOBILE = '200px'
@@ -22,9 +21,9 @@ const IndexPage = () => {
   return (
     <Layout>
       <div>
-        <MainImage
+        <HeaderImage
           className={!isMobile ? 'make-full-width' : ''}
-          imgUrl={titleImgTemp}
+          imgUrl={bethLindsSaltLake}
           imgHeight={isMobile ? IMG_HEIGHT_MOBILE : IMG_HEIGHT_WEB}
         />
         <Section1>
@@ -50,7 +49,7 @@ const IndexPage = () => {
             </Section1TextBox>
           </Section1TextWrapper>
           <Section1Img
-            src={homeWelcome}
+            src={bethLindsTable}
             alt="sample"
             className="border box-shadow"
             imgHeight={IMG_HEIGHT_WEB}

@@ -1,8 +1,9 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import useReactResponsive from '../hooks/useReactResponsive'
-import homeWelcome from '../img/home-welcome.jpg'
-import { MainText } from '../styles/SharedStyledComponents'
+import bethLindsTableImg from '../img/beth-linds-table.jpg'
+import bethFieldImg from '../img/beth-field.jpg'
+import { HeaderImage, MainText } from '../styles/SharedStyledComponents'
 import {
   Section0,
   Section0Header,
@@ -13,20 +14,18 @@ import {
   Section2Header,
   Section2Image,
 } from './aboutPageStyledComponents'
-import { MainImage } from './indexPageStyledComponents'
 
 const IMG_HEIGHT_WEB = '600px'
 const IMG_HEIGHT_MOBILE = '200px'
-const SECTION_ONE_HEIGHT = '600px'
 
 const AboutPage = () => {
   const { isMobile } = useReactResponsive()
   return (
     <Layout>
       <div>
-        <MainImage
+        <HeaderImage
           className={!isMobile ? 'make-full-width' : ''}
-          imgUrl={homeWelcome}
+          imgUrl={bethLindsTableImg}
           imgHeight={isMobile ? IMG_HEIGHT_MOBILE : IMG_HEIGHT_WEB}
         />
         <Section0>
@@ -43,10 +42,9 @@ const AboutPage = () => {
         </Section0>
         <Section1>
           <Section1Image
-            src={homeWelcome}
+            src={bethLindsTableImg}
             alt="sample"
             className="border box-shadow"
-            imgHeight={SECTION_ONE_HEIGHT}
           />
           <div>
             <Section1Header>Lindsay</Section1Header>
@@ -62,10 +60,9 @@ const AboutPage = () => {
         </Section1>
         <Section2>
           <Section2Image
-            src={homeWelcome}
+            src={bethFieldImg}
             alt="sample"
             className="border box-shadow"
-            imgHeight={SECTION_ONE_HEIGHT}
           />
           <div>
             <Section2Header>Bethany</Section2Header>
