@@ -1,10 +1,6 @@
 import React from 'react'
 
-<<<<<<< HEAD
 import instagram from '../img/icons-and-logos/social/instagram.svg'
-=======
-import instagram from '../img/social/instagram.svg'
->>>>>>> Remove unused vars
 // import twitter from '../img/social/twitter.svg'
 
 import { FontCredit, SocialLink, Wrapper } from './FooterStyledComponents'

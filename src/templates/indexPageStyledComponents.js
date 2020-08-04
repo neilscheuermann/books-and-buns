@@ -41,20 +41,3 @@ export const Section1WelcomeText = styled.h1`
   display: flex;
   justify-content: center;
 `
-
-// Section ...
-//
-export const EmailWrapper = styled.div`
-  margin: 80px 0 40px;
-  display: flex;
-  justify-content: center;
-`
-
-export const Img3 = styled.img`
-  position: absolute;
-  left: 5%;
-  top: -200px;
-  width: 30%;
-  height: ${({ imgHeight }) => imgHeight};
-  object-fit: cover;
-`
