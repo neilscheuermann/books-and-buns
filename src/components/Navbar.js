@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
-import bnbLogo from '../img/bnb-logo-black.svg'
+import bnbLogoBlack from '../img/icons-and-logos/bnb-logo-black.svg'
 import useReactResponsive from '../hooks/useReactResponsive'
 import {
   BORDER_COLOR,
@@ -50,7 +50,11 @@ const Navbar = () => {
       <div className="container">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" title="Logo">
-            <img src={bnbLogo} alt="BooksAndBuns" style={{ width: '58px' }} />
+            <img
+              src={bnbLogoBlack}
+              alt="BooksAndBuns"
+              style={{ width: '58px' }}
+            />
             <LogoText>
               books <Amper>&</Amper> buns
             </LogoText>
