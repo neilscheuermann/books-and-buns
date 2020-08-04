@@ -81,7 +81,7 @@ const Navbar = () => {
             <NavBarItem to="/podcasts">Podcasts</NavBarItem>
             {/* <NavBarItem to="/blog">Books</NavBarItem> */}
             <NavBarItem to="/contact">Contact</NavBarItem>
-            <NavBarItem to="/contact/examples">Form Examples</NavBarItem>
+            {/* <NavBarItem to="/contact/examples">Form Examples</NavBarItem> */}
           </div>
         </div>
       </div>
