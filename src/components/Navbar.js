@@ -61,29 +61,29 @@ const Navbar = () => {
           </Link>
           {/*                */}
           {/* Hamburger menu */}
-          {/* <div */}
-          {/*   className={`navbar-burger burger ${navBarActiveClass}`} */}
-          {/*   data-target="navMenu" */}
-          {/*   onClick={() => toggleHamburger()} */}
-          {/* > */}
-          {/*   <span /> */}
-          {/*   <span /> */}
-          {/*   <span /> */}
-          {/* </div> */}
+          <div
+            className={`navbar-burger burger ${navBarActiveClass}`}
+            data-target="navMenu"
+            onClick={() => toggleHamburger()}
+          >
+            <span />
+            <span />
+            <span />
+          </div>
           {/* ------------ */}
           {/*              */}
         </div>
-        {/* <div id="navMenu" className={`navbar-menu ${navBarActiveClass}`}> */}
-        {/*   <div className="navbar-start has-text-centered"> */}
-        {/*     <NavBarItem to="/">Home</NavBarItem> */}
-        {/*     <NavBarItem to="/about">About</NavBarItem> */}
-        {/*     <NavBarItem to="/editing">Editing</NavBarItem> */}
-        {/*     <NavBarItem to="/podcasts">Podcasts</NavBarItem> */}
-        {/*     <NavBarItem to="/blog">Books</NavBarItem> */}
-        {/*     <NavBarItem to="/contact">Contact</NavBarItem> */}
-        {/*     <NavBarItem to="/contact/examples">Form Examples</NavBarItem> */}
-        {/*   </div> */}
-        {/* </div> */}
+        <div id="navMenu" className={`navbar-menu ${navBarActiveClass}`}>
+          <div className="navbar-start has-text-centered">
+            <NavBarItem to="/">Home</NavBarItem>
+            <NavBarItem to="/about">About</NavBarItem>
+            <NavBarItem to="/editing">Editing</NavBarItem>
+            <NavBarItem to="/podcasts">Podcasts</NavBarItem>
+            {/* <NavBarItem to="/blog">Books</NavBarItem> */}
+            <NavBarItem to="/contact">Contact</NavBarItem>
+            <NavBarItem to="/contact/examples">Form Examples</NavBarItem>
+          </div>
+        </div>
       </div>
     </nav>
   )

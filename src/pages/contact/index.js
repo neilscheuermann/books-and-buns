@@ -46,7 +46,10 @@ export default class Index extends React.Component {
             marginTop: '50px',
           }}
         >
-          <MainText>Please email us at books.buns.co@gmail.com</MainText>
+          <MainText>
+            In the meantime, please email us at books.buns.co@gmail.com{' '}
+            <span>🙏</span>
+          </MainText>
         </div>
         {/* <section className="section"> */}
         {/*   <div className="container"> */}
