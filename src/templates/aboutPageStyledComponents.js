@@ -1,15 +1,11 @@
 import styled from 'styled-components'
-import { BACKGROUND_COLOR, COLOR_1 } from '../constants'
 
-export const MainImage = styled.div`
-  background-image: url(${({ imgUrl }) => imgUrl});
-  background-position: 50% 85%;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 600px;
+export const Section1 = styled.div`
+  position: relative;
+  height: ${({ SECTION_ONE_HEIGHT }) => SECTION_ONE_HEIGHT};
 `
 
-export const TextBox = styled.div`
+export const Section1TextBox = styled.div`
   position: absolute;
   width: 35%;
   z-index: 1;
@@ -18,11 +14,12 @@ export const TextBox = styled.div`
 
 // Pulled in custom Noteworthy Light font with this tutorial
 // https://dev.to/alaskaa/how-to-import-a-web-font-into-your-react-app-with-styled-components-4-1dni
-export const WelcomeText = styled.h1`
+export const AboutUsText = styled.h1`
   font-family: 'Noteworthy Light';
   color: black;
   font-size: 65px;
   transform: rotate(-3deg);
+  margin-left: 48px;
 `
 
 export const Img2 = styled.img`
