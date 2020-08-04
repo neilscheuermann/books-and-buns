@@ -4,10 +4,14 @@ import useReactResponsive from '../hooks/useReactResponsive'
 import homeWelcome from '../img/home-welcome.jpg'
 import { MainText } from '../styles/SharedStyledComponents'
 import {
-  Img2,
+  Section0,
+  Section0Header,
   Section1,
-  Section1TextBox,
-  AboutUsText,
+  Section1Header,
+  Section1Image,
+  Section2,
+  Section2Header,
+  Section2Image,
 } from './aboutPageStyledComponents'
 import { MainImage } from './indexPageStyledComponents'
 
@@ -25,26 +29,57 @@ const AboutPage = () => {
           imgUrl={homeWelcome}
           imgHeight={isMobile ? IMG_HEIGHT_MOBILE : IMG_HEIGHT_WEB}
         />
-      </div>
-      <AboutUsText>About Us!</AboutUsText>
-      <Section1 SECTION_ONE_HEIGHT={SECTION_ONE_HEIGHT}>
-        <Section1TextBox>
-          <MainText>Hey there,</MainText>
+        <Section0>
+          <Section0Header>About Us</Section0Header>
           <MainText>
-            I'm Lin. Reading has always provided me a safe-haven, so now
-            bringing stories into existence is my life. I get passionate about
-            stories because they frame the way we understand our lives. If you
-            have a story to tell, I am here to share my expertise and
-            encouragement.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum
           </MainText>
-        </Section1TextBox>
-        <Img2
-          src={homeWelcome}
-          alt="sample"
-          className="border box-shadow"
-          imgHeight={SECTION_ONE_HEIGHT}
-        />
-      </Section1>
+        </Section0>
+        <Section1>
+          <Section1Image
+            src={homeWelcome}
+            alt="sample"
+            className="border box-shadow"
+            imgHeight={SECTION_ONE_HEIGHT}
+          />
+          <div>
+            <Section1Header>Lindsay</Section1Header>
+            <MainText>Hey there,</MainText>
+            <MainText>
+              I'm Lin. Reading has always provided me a safe-haven, so now
+              bringing stories into existence is my life. I get passionate about
+              stories because they frame the way we understand our lives. If you
+              have a story to tell, I am here to share my expertise and
+              encouragement.
+            </MainText>
+          </div>
+        </Section1>
+        <Section2>
+          <Section2Image
+            src={homeWelcome}
+            alt="sample"
+            className="border box-shadow"
+            imgHeight={SECTION_ONE_HEIGHT}
+          />
+          <div>
+            <Section2Header>Bethany</Section2Header>
+            <MainText>Hi, hi!</MainText>
+            <MainText>
+              I'm Bee, a linguist who lingers on words and creative ideas. I
+              believe how we share our messages with the world creates our
+              impact. I find myself taking notes on the media I consume in my
+              free time to clarify the messages just that much more... so you
+              could say it has become somewhat of an obsession.
+            </MainText>
+          </div>
+        </Section2>
+      </div>
     </Layout>
   )
 }

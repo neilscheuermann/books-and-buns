@@ -1,48 +1,82 @@
 import styled from 'styled-components'
+import { TABLET_WIDTH_MAX_PLUS_1 } from '../constants'
 
-export const Section1 = styled.div`
-  position: relative;
-  height: ${({ SECTION_ONE_HEIGHT }) => SECTION_ONE_HEIGHT};
+// Section 0
+//
+export const Section0 = styled.div`
+  margin-top: 24px;
 `
 
-export const Section1TextBox = styled.div`
-  position: absolute;
-  width: 35%;
-  z-index: 1;
-  padding: 40px 20px 20px 20px;
-`
-
-// Pulled in custom Noteworthy Light font with this tutorial
-// https://dev.to/alaskaa/how-to-import-a-web-font-into-your-react-app-with-styled-components-4-1dni
-export const AboutUsText = styled.h1`
+export const Section0Header = styled.h1`
   font-family: 'Noteworthy Light';
   color: black;
   font-size: 65px;
   transform: rotate(-3deg);
-  margin-left: 48px;
+  display: flex;
+  justify-content: center;
 `
 
-export const Img2 = styled.img`
-  position: absolute;
-  left: 40%;
-  width: 60%;
-  height: ${({ imgHeight }) => imgHeight};
-  object-fit: cover;
+// Section 1
+//
+export const Section1 = styled.div`
+  margin-top: 24px;
+
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
 `
 
-export const Img3 = styled.img`
-  position: absolute;
-  left: 5%;
-  top: -200px;
-  width: 30%;
-  height: ${({ imgHeight }) => imgHeight};
-  object-fit: cover;
+export const Section1Image = styled.img`
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    width: 60%;
+    object-fit: cover;
+    margin: 16px;
+    margin-top: 24px;
+  }
 `
 
-export const SmallTextBox = styled.div`
-  position: absolute;
-  left: 5%;
-  top: 120px;
-  width: 25%;
-  padding: 20px;
+// Pulled in custom Noteworthy Light font with this tutorial
+// https://dev.to/alaskaa/how-to-import-a-web-font-into-your-react-app-with-styled-components-4-1dni
+export const Section1Header = styled.h1`
+  font-family: 'Noteworthy Light';
+  color: black;
+  font-size: 65px;
+  transform: rotate(-3deg);
+  display: flex;
+  justify-content: center;
+`
+
+// Section 2
+//
+export const Section2 = styled.div`
+  margin-top: 24px;
+
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    display: flex;
+  }
+`
+
+export const Section2Image = styled.img`
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    width: 60%;
+    object-fit: cover;
+    margin: 16px;
+    margin-top: 24px;
+  }
+`
+
+// Pulled in custom Noteworthy Light font with this tutorial
+// https://dev.to/alaskaa/how-to-import-a-web-font-into-your-react-app-with-styled-components-4-1dni
+export const Section2Header = styled.h1`
+  font-family: 'Noteworthy Light';
+  color: black;
+  font-size: 65px;
+  transform: rotate(-3deg);
+  display: flex;
+  justify-content: center;
 `
