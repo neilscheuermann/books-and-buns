@@ -5,10 +5,6 @@ import bethLindsTable from '../img/beth-linds-table.jpg'
 import bethLindsSaltLake from '../img/beth-linds-salt-lake.jpg'
 import {
   Section1Img,
-<<<<<<< HEAD
-=======
-  MainImage,
->>>>>>> Remove unused vars
   Section1,
   Section1TextBox,
   Section1TextWrapper,
