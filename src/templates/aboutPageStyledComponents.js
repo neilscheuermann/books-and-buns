@@ -20,19 +20,23 @@ export const Section0Header = styled.h1`
 //
 export const Section1 = styled.div`
   margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   ${/* Web */ ''}
   @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
-    display: flex;
     flex-direction: row-reverse;
   }
 `
 
 export const Section1Image = styled.img`
+  object-fit: cover;
+  width: 50%;
+
   ${/* Web */ ''}
   @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
     width: 60%;
-    object-fit: cover;
     margin: 16px;
     margin-top: 24px;
   }
