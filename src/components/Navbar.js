@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import bnbLogoBlack from '../img/icons-and-logos/bnb-logo-black.svg'
+import bnbLogoBlackSmall from '../img/icons-and-logos/bnb-logo-black-small.svg'
 import useReactResponsive from '../hooks/useReactResponsive'
 import {
   BORDER_COLOR,
   BACKGROUND_COLOR,
   HEADER_HEIGHT,
   HEADER_HEIGHT_MOBILE,
+  SHADOW,
 } from '../constants'
 import { Amper, LogoText, NavItemText } from './NavbarStyledComponents'
 import { MainText } from '../styles/SharedStyledComponents'
@@ -53,9 +55,15 @@ const Navbar = ({ pathname }) => {
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" title="Logo">
             <img
-              src={bnbLogoBlack}
+              src={isMobile ? bnbLogoBlackSmall : bnbLogoBlack}
               alt="BooksAndBuns"
-              style={{ width: '58px' }}
+              // Make sure max-height is none to respect the changes to width and height in logo svg
+              // Had to do inline style due to bulma styling
+              style={{
+                maxHeight: 'none',
+                filter: `drop-shadow(${SHADOW})`,
+                margin: '0 8px',
+              }}
             />
             <LogoText>
               books <Amper>&</Amper> buns

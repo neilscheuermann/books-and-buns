@@ -55,18 +55,6 @@ const IndexPage = ({ location: { pathname } }) => {
           />
         </Section1>
       </div>
-      <div>
-        <MainText>
-          More coming soon! Please follow us below or email us at
-          books.buns.co@gmail.com
-        </MainText>
-      </div>
-      <EmailWrapper>
-        <MainText>
-          More coming soon! Please follow us below or email us at
-          books.buns.co@gmail.com
-        </MainText>
-      </EmailWrapper>
     </Layout>
   )
 }
