@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { useMediaQuery } from 'react-responsive'
 import { withPrefix } from 'gatsby'
@@ -45,7 +46,7 @@ const Example = () => {
   )
 }
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper = ({ children, pathname }) => {
   const { title, description } = useSiteMetadata()
 
   return (
@@ -97,7 +98,7 @@ const TemplateWrapper = ({ children }) => {
           justifyContent: 'space-between',
         }}
       >
-        <Navbar />
+        <Navbar pathname={pathname} />
         <div>
           <Content>{children}</Content>
         </div>
@@ -106,6 +107,10 @@ const TemplateWrapper = ({ children }) => {
       </div>
     </div>
   )
+}
+
+TemplateWrapper.propTypes = {
+  pathname: PropTypes.string.isRequired,
 }
 
 export default TemplateWrapper
