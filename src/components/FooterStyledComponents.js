@@ -10,7 +10,7 @@ import {
 export const Wrapper = styled.footer`
   background-color: ${HEADER_COLOR};
   width: 100%;
-  height: ${FOOTER_HEIGHT};
+  min-height: ${FOOTER_HEIGHT};
   display: flex;
   justify-content: center;
   align-items: center;

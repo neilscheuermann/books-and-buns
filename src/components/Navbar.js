@@ -1,35 +1,39 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
-import bnbLogo from '../img/bnb-logo-black.svg'
+import bnbLogoBlack from '../img/icons-and-logos/bnb-logo-black.svg'
+import bnbLogoBlackSmall from '../img/icons-and-logos/bnb-logo-black-small.svg'
 import useReactResponsive from '../hooks/useReactResponsive'
 import {
   BORDER_COLOR,
   BACKGROUND_COLOR,
   HEADER_HEIGHT,
   HEADER_HEIGHT_MOBILE,
+  SHADOW,
 } from '../constants'
-import { Amper, LogoText } from './NavbarStyledComponents'
+import { Amper, LogoText, NavItemText } from './NavbarStyledComponents'
 import { MainText } from '../styles/SharedStyledComponents'
 
-const NavBarItem = ({ to, children }) => {
+const NavItem = ({ to, children, pathname }) => {
+  const selected = pathname ? pathname.toLowerCase() === to : false
+
   return (
     <Link className="navbar-item" to={to}>
-      <MainText>{children}</MainText>
+      <NavItemText selected={selected}>{children}</NavItemText>
     </Link>
   )
 }
 
-const Navbar = () => {
+const Navbar = ({ pathname }) => {
   const [navBarActiveClass, setNavBarActiveClass] = useState('')
-  const [active, setActive] = useState(false)
-  const { isTabletOrMobileDevice } = useReactResponsive()
+  const [hamburgerActive, setHamburgerActive] = useState(false)
+  const { isMobile } = useReactResponsive()
 
   useEffect(() => {
-    active ? setNavBarActiveClass('is-active') : setNavBarActiveClass()
-  }, [active])
+    hamburgerActive ? setNavBarActiveClass('is-active') : setNavBarActiveClass()
+  }, [hamburgerActive])
 
   const toggleHamburger = () => {
-    setActive(!active)
+    setHamburgerActive(!hamburgerActive)
   }
 
   return (
@@ -42,7 +46,7 @@ const Navbar = () => {
         top: '0',
         left: '0',
         width: '100%',
-        height: isTabletOrMobileDevice ? HEADER_HEIGHT_MOBILE : HEADER_HEIGHT,
+        height: isMobile ? HEADER_HEIGHT_MOBILE : HEADER_HEIGHT,
         backgroundColor: BACKGROUND_COLOR,
         borderBottom: `solid ${BORDER_COLOR} 1px`,
       }}
@@ -50,36 +54,60 @@ const Navbar = () => {
       <div className="container">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" title="Logo">
-            <img src={bnbLogo} alt="BooksAndBuns" style={{ width: '58px' }} />
+            <img
+              src={isMobile ? bnbLogoBlackSmall : bnbLogoBlack}
+              alt="BooksAndBuns"
+              // Make sure max-height is none to respect the changes to width and height in logo svg
+              // Had to do inline style due to bulma styling
+              style={{
+                maxHeight: 'none',
+                filter: `drop-shadow(${SHADOW})`,
+                margin: '0 8px',
+              }}
+            />
             <LogoText>
               books <Amper>&</Amper> buns
             </LogoText>
           </Link>
           {/*                */}
           {/* Hamburger menu */}
-          {/* <div */}
-          {/*   className={`navbar-burger burger ${navBarActiveClass}`} */}
-          {/*   data-target="navMenu" */}
-          {/*   onClick={() => toggleHamburger()} */}
-          {/* > */}
-          {/*   <span /> */}
-          {/*   <span /> */}
-          {/*   <span /> */}
-          {/* </div> */}
+          <div
+            className={`navbar-burger burger ${navBarActiveClass}`}
+            data-target="navMenu"
+            onClick={() => toggleHamburger()}
+            style={{
+              marginTop: '8px',
+              marginRight: '8px',
+            }}
+          >
+            <span />
+            <span />
+            <span />
+          </div>
           {/* ------------ */}
           {/*              */}
         </div>
-        {/* <div id="navMenu" className={`navbar-menu ${navBarActiveClass}`}> */}
-        {/*   <div className="navbar-start has-text-centered"> */}
-        {/*     <NavBarItem to="/">Home</NavBarItem> */}
-        {/*     <NavBarItem to="/about">About</NavBarItem> */}
-        {/*     <NavBarItem to="/editing">Editing</NavBarItem> */}
-        {/*     <NavBarItem to="/podcasts">Podcasts</NavBarItem> */}
-        {/*     <NavBarItem to="/blog">Books</NavBarItem> */}
-        {/*     <NavBarItem to="/contact">Contact</NavBarItem> */}
-        {/*     <NavBarItem to="/contact/examples">Form Examples</NavBarItem> */}
-        {/*   </div> */}
-        {/* </div> */}
+        <div id="navMenu" className={`navbar-menu ${navBarActiveClass}`}>
+          <div className="navbar-start has-text-centered">
+            <NavItem pathname={pathname} to="/">
+              Home
+            </NavItem>
+            <NavItem pathname={pathname} to="/about">
+              About
+            </NavItem>
+            <NavItem pathname={pathname} to="/editing">
+              Editing
+            </NavItem>
+            <NavItem pathname={pathname} to="/podcasts">
+              Podcasts
+            </NavItem>
+            {/* <NavItem pathname={pathname} to="/blog">Books</NavItem> */}
+            <NavItem pathname={pathname} to="/contact">
+              Contact
+            </NavItem>
+            {/* <NavItem pathname={pathname} to="/contact/examples">Form Examples</NavItem> */}
+          </div>
+        </div>
       </div>
     </nav>
   )

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { useMediaQuery } from 'react-responsive'
 import { withPrefix } from 'gatsby'
@@ -8,11 +9,7 @@ import '../styles/global.css'
 import useSiteMetadata from './SiteMetadata'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-import {
-  MOBILE_WIDTH_MAX,
-  TABLET_WIDTH_MAX,
-  TABLET_WIDTH_MIN,
-} from '../constants'
+import { TABLET_WIDTH_MAX } from '../constants'
 import { Content } from './LayoutStyledComponents'
 import GlobalFonts from '../fonts/fonts'
 
@@ -49,7 +46,7 @@ const Example = () => {
   )
 }
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper = ({ children, pathname }) => {
   const { title, description } = useSiteMetadata()
 
   return (
@@ -101,7 +98,7 @@ const TemplateWrapper = ({ children }) => {
           justifyContent: 'space-between',
         }}
       >
-        <Navbar />
+        <Navbar pathname={pathname} />
         <div>
           <Content>{children}</Content>
         </div>
@@ -110,6 +107,10 @@ const TemplateWrapper = ({ children }) => {
       </div>
     </div>
   )
+}
+
+TemplateWrapper.propTypes = {
+  pathname: PropTypes.string.isRequired,
 }
 
 export default TemplateWrapper
