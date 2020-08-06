@@ -4,8 +4,12 @@ import Layout from '../../components/Layout'
 
 export default class Index extends React.Component {
   render() {
+    const {
+      location: { pathname },
+    } = this.props
+
     return (
-      <Layout>
+      <Layout pathname={pathname}>
         <section className="section">
           <div className="container">
             <div className="content">

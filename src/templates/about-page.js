@@ -18,10 +18,11 @@ import {
 const IMG_HEIGHT_WEB = '600px'
 const IMG_HEIGHT_MOBILE = '200px'
 
-const AboutPage = () => {
+const AboutPage = ({ location: { pathname } }) => {
   const { isMobile } = useReactResponsive()
+
   return (
-    <Layout>
+    <Layout pathname={pathname}>
       <div>
         <HeaderImage
           className={!isMobile ? 'make-full-width' : ''}

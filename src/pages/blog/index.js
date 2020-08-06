@@ -5,8 +5,12 @@ import BlogRoll from '../../components/BlogRoll'
 
 export default class BlogIndexPage extends React.Component {
   render() {
+    const {
+      location: { pathname },
+    } = this.props
+
     return (
-      <Layout>
+      <Layout pathname={pathname}>
         <div
           className="full-width-image-container margin-top-0"
           style={{

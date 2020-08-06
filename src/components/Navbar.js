@@ -8,28 +8,30 @@ import {
   HEADER_HEIGHT,
   HEADER_HEIGHT_MOBILE,
 } from '../constants'
-import { Amper, LogoText } from './NavbarStyledComponents'
+import { Amper, LogoText, NavItemText } from './NavbarStyledComponents'
 import { MainText } from '../styles/SharedStyledComponents'
 
-const NavBarItem = ({ to, children }) => {
+const NavItem = ({ to, children, pathname }) => {
+  const selected = pathname ? pathname.toLowerCase() === to : false
+
   return (
     <Link className="navbar-item" to={to}>
-      <MainText>{children}</MainText>
+      <NavItemText selected={selected}>{children}</NavItemText>
     </Link>
   )
 }
 
-const Navbar = () => {
+const Navbar = ({ pathname }) => {
   const [navBarActiveClass, setNavBarActiveClass] = useState('')
-  const [active, setActive] = useState(false)
+  const [hamburgerActive, setHamburgerActive] = useState(false)
   const { isMobile } = useReactResponsive()
 
   useEffect(() => {
-    active ? setNavBarActiveClass('is-active') : setNavBarActiveClass()
-  }, [active])
+    hamburgerActive ? setNavBarActiveClass('is-active') : setNavBarActiveClass()
+  }, [hamburgerActive])
 
   const toggleHamburger = () => {
-    setActive(!active)
+    setHamburgerActive(!hamburgerActive)
   }
 
   return (
@@ -75,13 +77,23 @@ const Navbar = () => {
         </div>
         <div id="navMenu" className={`navbar-menu ${navBarActiveClass}`}>
           <div className="navbar-start has-text-centered">
-            <NavBarItem to="/">Home</NavBarItem>
-            <NavBarItem to="/about">About</NavBarItem>
-            <NavBarItem to="/editing">Editing</NavBarItem>
-            <NavBarItem to="/podcasts">Podcasts</NavBarItem>
-            {/* <NavBarItem to="/blog">Books</NavBarItem> */}
-            <NavBarItem to="/contact">Contact</NavBarItem>
-            {/* <NavBarItem to="/contact/examples">Form Examples</NavBarItem> */}
+            <NavItem pathname={pathname} to="/">
+              Home
+            </NavItem>
+            <NavItem pathname={pathname} to="/about">
+              About
+            </NavItem>
+            <NavItem pathname={pathname} to="/editing">
+              Editing
+            </NavItem>
+            <NavItem pathname={pathname} to="/podcasts">
+              Podcasts
+            </NavItem>
+            {/* <NavItem pathname={pathname} to="/blog">Books</NavItem> */}
+            <NavItem pathname={pathname} to="/contact">
+              Contact
+            </NavItem>
+            {/* <NavItem pathname={pathname} to="/contact/examples">Form Examples</NavItem> */}
           </div>
         </div>
       </div>

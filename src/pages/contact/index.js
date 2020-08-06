@@ -36,8 +36,12 @@ export default class Index extends React.Component {
   }
 
   render() {
+    const {
+      location: { pathname },
+    } = this.props
+
     return (
-      <Layout>
+      <Layout pathname={pathname}>
         <ComingSoon>Under Construction</ComingSoon>
         <div
           style={{
