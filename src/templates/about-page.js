@@ -1,7 +1,8 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import useReactResponsive from '../hooks/useReactResponsive'
-import bethLindsTableImg from '../img/beth-linds-table.jpg'
+import bethLindsTableImg from '../img/lindsay.jpg'
+import bethLindsBooksImg from '../img/beth-linds-books.jpg'
 import bethFieldImg from '../img/beth-field.jpg'
 import { HeaderImage, MainText } from '../styles/SharedStyledComponents'
 import {
@@ -26,7 +27,7 @@ const AboutPage = ({ location: { pathname } }) => {
       <div>
         <HeaderImage
           className={!isMobile ? 'make-full-width' : ''}
-          imgUrl={bethLindsTableImg}
+          imgUrl={bethLindsBooksImg}
           imgHeight={isMobile ? IMG_HEIGHT_MOBILE : IMG_HEIGHT_WEB}
         />
         <Section0>
