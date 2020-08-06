@@ -30,7 +30,7 @@ const AboutPage = ({ location: { pathname } }) => {
           imgHeight={isMobile ? IMG_HEIGHT_MOBILE : IMG_HEIGHT_WEB}
         />
         <Section0>
-          <Section0Header>About Us</Section0Header>
+          <Section0Header>About Us (Lorem Ipsum)</Section0Header>
           <MainText>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
