@@ -75,6 +75,10 @@ const Navbar = ({ pathname }) => {
             className={`navbar-burger burger ${navBarActiveClass}`}
             data-target="navMenu"
             onClick={() => toggleHamburger()}
+            style={{
+              marginTop: '8px',
+              marginRight: '8px',
+            }}
           >
             <span />
             <span />
