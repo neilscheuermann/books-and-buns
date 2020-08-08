@@ -1,17 +1,16 @@
 import styled from 'styled-components'
-import { TABLET_WIDTH_MAX_PLUS_1 } from '../constants'
+import { TABLET_WIDTH_MAX, TABLET_WIDTH_MAX_PLUS_1 } from '../constants'
 
 // Section 0
 //
 export const Section0 = styled.div`
-  margin-top: 24px;
+  padding-top: 24px;
 `
 
 export const Section0Header = styled.h1`
   font-family: 'Noteworthy Light';
   color: black;
   font-size: 65px;
-  transform: rotate(-3deg);
   display: flex;
   justify-content: center;
 `
@@ -26,7 +25,17 @@ export const Section1 = styled.div`
 
   ${/* Web */ ''}
   @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    width: 80%;
     flex-direction: row-reverse;
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+`
+
+export const Section1TextContent = styled.div`
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    width: 50%;
   }
 `
 
@@ -36,7 +45,8 @@ export const Section1Image = styled.img`
 
   ${/* Web */ ''}
   @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
-    width: 60%;
+    width: 50%;
+    height: auto;
     margin: 16px;
     margin-top: 24px;
   }
@@ -58,19 +68,44 @@ export const Section1Header = styled.h1`
 export const Section2 = styled.div`
   margin-top: 24px;
 
+  ${/* Mobile or Tablet*/ ''}
+  @media (max-width: ${TABLET_WIDTH_MAX}) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   ${/* Web */ ''}
   @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    width: 80%;
     display: flex;
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
 `
 
 export const Section2Image = styled.img`
+  object-fit: cover;
+
+  ${/* Mobile or Tablet*/ ''}
+  @media (max-width: ${TABLET_WIDTH_MAX}) {
+    width: 80%;
+    height: 300px;
+  }
+
   ${/* Web */ ''}
   @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
-    width: 60%;
-    object-fit: cover;
+    width: 50%;
+    height: auto;
     margin: 16px;
     margin-top: 24px;
+  }
+`
+
+export const Section2TextContent = styled.div`
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    width: 50%;
   }
 `
 

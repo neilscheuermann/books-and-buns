@@ -30,6 +30,11 @@ strong {
   margin-right: -50vw;
 }
 
+.jc-center {
+  display: flex;
+  justify-content: center;
+}
+
 /* For quick deving purposes */
 .dev-red-border {
   border: solid red 2px;
@@ -46,3 +51,8 @@ strong {
 .dev-blue-border {
   border: solid blue 2px;
 }
+
+/* Create custom css shape here http://androidcss.com/css-shape-icon-generator/# */
+.shape13{display:inline-block!important;width:10px;height:calc(10px*1.5);background-color:rgb(184, 191, 204);border-radius:100%}
+{display:inline-block!important;width:30px;height:30px;background-color:rgb(184, 191, 204);border-radius:100%}
+

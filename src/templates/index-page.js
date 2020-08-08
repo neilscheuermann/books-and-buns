@@ -6,7 +6,6 @@ import bethLindsSaltLake from '../img/beth-linds-salt-lake.jpg'
 import {
   Section1Img,
   Section1,
-  Section1TextBox,
   Section1TextWrapper,
   Section1WelcomeText,
 } from './indexPageStyledComponents'
@@ -28,8 +27,8 @@ const IndexPage = ({ location: { pathname } }) => {
         />
         <Section1>
           <Section1TextWrapper>
-            <Section1WelcomeText>Welcome!</Section1WelcomeText>
-            <Section1TextBox>
+            {/* <Section1WelcomeText>Welcome!</Section1WelcomeText> */}
+            <div>
               <MainText>
                 We are{' '}
                 <strong style={{ fontSize: '1.25em' }}>Books and Buns</strong>!
@@ -46,7 +45,7 @@ const IndexPage = ({ location: { pathname } }) => {
                 we are here for the <strong>Copy Edit</strong>, to cross your
                 t's and dot those i's.
               </MainText>
-            </Section1TextBox>
+            </div>
           </Section1TextWrapper>
           <Section1Img
             src={bethLindsTable}

@@ -12,11 +12,6 @@ export const Section1 = styled.div`
   }
 `
 
-export const Section1TextBox = styled.div`
-  ${/* Web */ ''}
-  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
-  }
-`
 export const Section1TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
