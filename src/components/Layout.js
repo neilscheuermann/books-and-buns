@@ -7,6 +7,7 @@ import { withPrefix } from 'gatsby'
 import './all.sass'
 import '../styles/global.css'
 import useSiteMetadata from './SiteMetadata'
+import useReactResponsive from '../hooks/useReactResponsive'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { TABLET_WIDTH_MAX } from '../constants'
@@ -46,8 +47,43 @@ const Example = () => {
   )
 }
 
+const DividerDots = () => {
+  return (
+    <>
+      <i
+        class="shape13"
+        style={{
+          position: 'fixed',
+          left: 'calc(50% - 32px)',
+          top: '88px',
+          zIndex: 100,
+        }}
+      ></i>
+      <i
+        class="shape13"
+        style={{
+          position: 'fixed',
+          left: '50%',
+          top: '88px',
+          zIndex: 100,
+        }}
+      ></i>
+      <i
+        class="shape13"
+        style={{
+          position: 'fixed',
+          left: 'calc(50% + 32px)',
+          top: '88px',
+          zIndex: 100,
+        }}
+      ></i>
+    </>
+  )
+}
+
 const TemplateWrapper = ({ children, pathname }) => {
   const { title, description } = useSiteMetadata()
+  const { isMobile } = useReactResponsive()
 
   return (
     <div>
@@ -96,9 +132,13 @@ const TemplateWrapper = ({ children, pathname }) => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
+          position: 'relative',
         }}
       >
         <Navbar pathname={pathname} />
+        {/* ===== ICON ===== */}
+        {!isMobile && <DividerDots />}
+        {/* ========== */}
         <div>
           <Content>{children}</Content>
         </div>

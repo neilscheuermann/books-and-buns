@@ -53,6 +53,14 @@ strong {
 }
 
 /* Create custom css shape here http://androidcss.com/css-shape-icon-generator/# */
-.shape13{display:inline-block!important;width:10px;height:calc(10px*1.5);background-color:rgb(184, 191, 204);border-radius:100%}
-{display:inline-block!important;width:30px;height:30px;background-color:rgb(184, 191, 204);border-radius:100%}
+.shape13{
+  display:inline-block!important;
+  position:relative;
+  width:12px;
+  height:12px;
+  background:rgb(218, 228, 245);
+  border-radius:100%;
+  border:calc(16px/10) solid rgb(184, 191, 204);
+  box-sizing:content-box
+}
 
