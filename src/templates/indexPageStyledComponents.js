@@ -24,6 +24,7 @@ export const Section1TextWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   position: relative;
+  padding-left: 16px;
 `
 
 export const Section1Header = styled(MainText)`
@@ -48,7 +49,6 @@ export const Section1Img = styled.img`
     width: 60%;
     object-fit: cover;
     margin: 16px;
-    margin-top: 24px;
   }
 `
 

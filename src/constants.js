@@ -12,7 +12,7 @@ export const COLOR_ORANGE = 'rgb(224, 117, 71)'
 
 export const FOOTER_HEIGHT = '64px'
 export const HEADER_HEIGHT = '96px'
-export const HEADER_HEIGHT_MOBILE = '68px'
+export const HEADER_HEIGHT_MOBILE = '78px'
 
 export const MOBILE_WIDTH_MAX = '768px'
 export const TABLET_WIDTH_MIN = '769px'

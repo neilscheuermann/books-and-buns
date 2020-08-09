@@ -6,18 +6,25 @@ import useReactResponsive from '../hooks/useReactResponsive'
 import {
   BORDER_COLOR,
   BACKGROUND_COLOR,
+  COLOR_ORANGE,
   HEADER_HEIGHT,
   HEADER_HEIGHT_MOBILE,
   SHADOW,
 } from '../constants'
-import { Amper, LogoText, NavItemText } from './NavbarStyledComponents'
+import {
+  Amper,
+  LogoText,
+  NavItemText,
+  NavItemsWrapper,
+  NavbarContentWrapper,
+} from './NavbarStyledComponents'
 import { MainText } from '../styles/SharedStyledComponents'
 
 const NavItem = ({ to, children, pathname }) => {
   const selected = pathname ? pathname.toLowerCase() === to : false
 
   return (
-    <Link className="navbar-item" to={to}>
+    <Link className="text-white navbar-item" to={to}>
       <NavItemText selected={selected}>{children}</NavItemText>
     </Link>
   )
@@ -51,8 +58,12 @@ const Navbar = ({ pathname }) => {
         borderBottom: `solid ${BORDER_COLOR} 1px`,
       }}
     >
-      <div className="container">
-        <div className="navbar-brand">
+      {/* <div className="container"> */}
+      <NavbarContentWrapper className="container">
+        <div
+          className="navbar-brand"
+          style={!isMobile ? { marginRight: '114px' } : {}}
+        >
           <Link to="/" className="navbar-item" title="Logo">
             <img
               src={isMobile ? bnbLogoOrangeSmall : bnbLogoOrange}
@@ -61,7 +72,6 @@ const Navbar = ({ pathname }) => {
               // Had to do inline style due to bulma styling
               style={{
                 maxHeight: 'none',
-                filter: `drop-shadow(${SHADOW})`,
                 margin: '0 8px',
               }}
             />
@@ -76,8 +86,9 @@ const Navbar = ({ pathname }) => {
             data-target="navMenu"
             onClick={() => toggleHamburger()}
             style={{
-              marginTop: '8px',
-              marginRight: '8px',
+              marginTop: '16px',
+              marginRight: '16px',
+              color: COLOR_ORANGE,
             }}
           >
             <span />
@@ -87,8 +98,14 @@ const Navbar = ({ pathname }) => {
           {/* ------------ */}
           {/*              */}
         </div>
-        <div id="navMenu" className={`navbar-menu ${navBarActiveClass}`}>
-          <div className="navbar-start has-text-centered">
+        <div
+          id="navMenu"
+          className={`navbar-menu ${navBarActiveClass}`}
+          style={isMobile ? { backgroundColor: BORDER_COLOR } : {}}
+        >
+          <NavItemsWrapper
+            className={isMobile ? 'navbar-start has-text-centered' : ''}
+          >
             <NavItem pathname={pathname} to="/">
               Home
             </NavItem>
@@ -106,9 +123,9 @@ const Navbar = ({ pathname }) => {
               Contact
             </NavItem>
             {/* <NavItem pathname={pathname} to="/contact/examples">Form Examples</NavItem> */}
-          </div>
+          </NavItemsWrapper>
         </div>
-      </div>
+      </NavbarContentWrapper>
     </nav>
   )
 }

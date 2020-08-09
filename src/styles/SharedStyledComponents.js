@@ -31,6 +31,6 @@ export const HeaderImage = styled.div`
   @media (max-width: ${TABLET_WIDTH_MAX}) {
     background-position: center center;
     background-size: cover;
-    margin-top: 80px;
+    margin-top: 90px;
   }
 `
