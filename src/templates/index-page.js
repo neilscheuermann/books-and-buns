@@ -5,6 +5,7 @@ import bethLindsTable from '../img/beth-linds-table.jpg'
 import bethLindsSaltLake from '../img/beth-linds-salt-lake.jpg'
 import {
   Section1Img,
+  Section1Header,
   Section1,
   Section1TextWrapper,
   Section1WelcomeText,
@@ -29,20 +30,22 @@ const IndexPage = ({ location: { pathname } }) => {
           <Section1TextWrapper>
             {/* <Section1WelcomeText>Welcome!</Section1WelcomeText> */}
             <div>
+              <Section1Header>Story Craft</Section1Header>
+              <MainText style={{ marginTop: '32px' }}>
+                We are Books & Buns! We offer detailed <i>Concept Editing</i>{' '}
+                because writing a story can be a lonely calling. you often just
+                need someone to brainstorm with or someone to take a step back
+                to see the big picture. That is easy to miss when every detail
+                of your story is under scrutiny. It's like missing the forest
+                for the trees. That's where we come in. Show us your forest!
+              </MainText>
+              <MainText>Once you have your story down on paper</MainText>
               <MainText>
-                We are{' '}
-                <strong style={{ fontSize: '1.25em' }}>Books and Buns</strong>!
-                We offer detailed <strong>Concept Editing</strong> because
-                writing a story can be a lonely calling. you often just need
-                someone to brainstorm with or someone to take a step back to see
-                the big picture. That is easy to miss when every detail of your
-                story is under scrutiny. It's like missing the forest for the
-                trees. That's where we come in. Show us your forest!
+                First step: take a huge sigh of relief and a fist bump, cause
+                ... ya boss.
               </MainText>
               <MainText>
-                Once you have your story down on paper, First step: take a huge
-                sigh of relief and a fist bump, cause ... ya boss. Second step:
-                we are here for the <strong>Copy Edit</strong>, to cross your
+                Second step: we are here for the <i>Copy Edit</i>, to cross your
                 t's and dot those i's.
               </MainText>
             </div>
