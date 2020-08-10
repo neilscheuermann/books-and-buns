@@ -120,7 +120,7 @@ const Navbar = ({ pathname }) => {
             </NavItem>
             {/* <NavItem pathname={pathname} to="/blog">Books</NavItem> */}
             <NavItem pathname={pathname} to="/contact">
-              Contact
+              Connect
             </NavItem>
             {/* <NavItem pathname={pathname} to="/contact/examples">Form Examples</NavItem> */}
           </NavItemsWrapper>
