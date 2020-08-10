@@ -47,6 +47,19 @@ export default class Index extends React.Component {
           }}
         >
           <MainText>Please email us at books.buns.co@gmail.com</MainText>
+          <form action="POST" data-netlify="true">
+            <input type="text" name="name" id="name" placeholder="Name" />
+            <input type="email" name="email" id="email" placeholder="Email" />
+            <textarea
+              id="message"
+              name="message"
+              cols="30"
+              rows="10"
+              placeholder="Message"
+            ></textarea>
+            <input type="file" name="myfile" id="myfile" />
+            <div data-netlify-recaptcha="true"></div>
+          </form>
         </div>
         {/* <section className="section"> */}
         {/*   <div className="container"> */}
