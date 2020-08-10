@@ -1,8 +1,21 @@
 import React from 'react'
 import { navigate } from 'gatsby-link'
 import Layout from '../../components/Layout'
-import ComingSoon from '../../components/ComingSoon'
-import { MainText } from '../../styles/SharedStyledComponents'
+import { HEADER_HEIGHT } from '../../constants'
+import {
+  ContactHeader,
+  Form,
+  FormWrapper,
+  InputName,
+  InputSubject,
+  InputSubjectWrapper,
+  InputHalfWrapper,
+  InputEmail,
+  TextArea,
+  TextAreaWrapper,
+  Button,
+  ButtonText,
+} from './ContactStyledComponents'
 
 function encode(data) {
   return Object.keys(data)
@@ -42,118 +55,64 @@ export default class Index extends React.Component {
 
     return (
       <Layout pathname={pathname}>
-        <ComingSoon>Under Construction</ComingSoon>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: '50px',
-          }}
+        <ContactHeader
+          style={{ marginTop: `${parseInt(HEADER_HEIGHT) + 64}px` }}
         >
-          <MainText>Please email us at books.buns.co@gmail.com</MainText>
-          <form
+          Connect with us
+        </ContactHeader>
+        <FormWrapper>
+          <Form
             name="contact"
             method="post"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
           >
+            {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
             <input type="hidden" name="bot-field" />
             <input type="hidden" name="form-name" value="contact" />
-            <div className="field half first">
-              <label htmlFor="name">Name</label>
-              <input type="text" name="name" id="name" />
+            {/* ============================================== */}
+
+            <div style={{ display: 'flex' }}>
+              <InputHalfWrapper style={{ marginRight: '8px' }}>
+                <InputName
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Name"
+                />
+              </InputHalfWrapper>
+              <InputHalfWrapper style={{ marginLeft: '8px' }}>
+                <InputEmail
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                />
+              </InputHalfWrapper>
             </div>
-            <div className="field half">
-              <label htmlFor="email">Email</label>
-              <input type="text" name="email" id="email" />
+            <InputSubjectWrapper>
+              <InputSubject
+                type="text"
+                name="subject"
+                id="subject"
+                placeholder="Subject"
+              />
+            </InputSubjectWrapper>
+            <TextAreaWrapper>
+              <TextArea
+                name="message"
+                id="message"
+                rows="6"
+                placeholder="Message"
+              />
+            </TextAreaWrapper>
+            <div className="actions">
+              <Button type="submit" value="Send Message">
+                <ButtonText>Send Message</ButtonText>
+              </Button>
             </div>
-            <div className="field">
-              <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" rows="6" />
-            </div>
-            <ul className="actions">
-              <li>
-                <input type="submit" value="Send Message" className="special" />
-              </li>
-              <li>
-                <input type="reset" value="Clear" />
-              </li>
-            </ul>
-          </form>
-        </div>
-        {/* <section className="section"> */}
-        {/*   <div className="container"> */}
-        {/*     <div className="content"> */}
-        {/*       <h1>Contact</h1> */}
-        {/*       <form */}
-        {/*         name="contact" */}
-        {/*         method="post" */}
-        {/*         action="/contact/thanks/" */}
-        {/*         data-netlify="true" */}
-        {/*         data-netlify-honeypot="bot-field" */}
-        {/*         onSubmit={this.handleSubmit} */}
-        {/*       > */}
-        {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-        {/*         <input type="hidden" name="form-name" value="contact" /> */}
-        {/*         <div hidden> */}
-        {/*           <label> */}
-        {/*             Don’t fill this out:{' '} */}
-        {/*             <input name="bot-field" onChange={this.handleChange} /> */}
-        {/*           </label> */}
-        {/*         </div> */}
-        {/*         <div className="field"> */}
-        {/*           <label className="label" htmlFor={'name'}> */}
-        {/*             Your name */}
-        {/*           </label> */}
-        {/*           <div className="control"> */}
-        {/*             <input */}
-        {/*               className="input" */}
-        {/*               type={'text'} */}
-        {/*               name={'name'} */}
-        {/*               onChange={this.handleChange} */}
-        {/*               id={'name'} */}
-        {/*               required={true} */}
-        {/*             /> */}
-        {/*           </div> */}
-        {/*         </div> */}
-        {/*         <div className="field"> */}
-        {/*           <label className="label" htmlFor={'email'}> */}
-        {/*             Email */}
-        {/*           </label> */}
-        {/*           <div className="control"> */}
-        {/*             <input */}
-        {/*               className="input" */}
-        {/*               type={'email'} */}
-        {/*               name={'email'} */}
-        {/*               onChange={this.handleChange} */}
-        {/*               id={'email'} */}
-        {/*               required={true} */}
-        {/*             /> */}
-        {/*           </div> */}
-        {/*         </div> */}
-        {/*         <div className="field"> */}
-        {/*           <label className="label" htmlFor={'message'}> */}
-        {/*             Message */}
-        {/*           </label> */}
-        {/*           <div className="control"> */}
-        {/*             <textarea */}
-        {/*               className="textarea" */}
-        {/*               name={'message'} */}
-        {/*               onChange={this.handleChange} */}
-        {/*               id={'message'} */}
-        {/*               required={true} */}
-        {/*             /> */}
-        {/*           </div> */}
-        {/*         </div> */}
-        {/*         <div className="field"> */}
-        {/*           <button className="button is-link" type="submit"> */}
-        {/*             Send */}
-        {/*           </button> */}
-        {/*         </div> */}
-        {/*       </form> */}
-        {/*     </div> */}
-        {/*   </div> */}
-        {/* </section> */}
+          </Form>
+        </FormWrapper>
       </Layout>
     )
   }
