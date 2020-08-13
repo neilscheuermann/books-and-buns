@@ -4,8 +4,8 @@ import { SHADOW, TABLET_WIDTH_MAX_PLUS_1 } from '../constants'
 import { MainText } from '../styles/SharedStyledComponents'
 
 export const LogoText = styled.div`
-  font-family: 'Noteworthy Light';
-  color: white;
+  font-family: 'Tw Cen Medium Regular';
+  color: #4a4a4a;
   font-weight: 800;
   font-size: 40px;
   display: flex;
@@ -16,7 +16,6 @@ export const LogoText = styled.div`
 export const Amper = styled.div`
   font-size: 28px;
   margin: 0 6px;
-  margin-top: 10px;
 `
 
 export const NavbarContentWrapper = styled.div`

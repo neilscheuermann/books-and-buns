@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import bnbLogoOrange from '../img/icons-and-logos/bnb-logo-orange-40px.svg'
+import bnbLogoBlack from '../img/icons-and-logos/bnb-logo-black-40px.svg'
 import bnbLogoOrangeSmall from '../img/icons-and-logos/bnb-logo-orange-30px.svg'
+import bnbLogoBlackSmall from '../img/icons-and-logos/bnb-logo-black-30px.svg'
 import useReactResponsive from '../hooks/useReactResponsive'
 import {
   BORDER_COLOR,
@@ -24,7 +26,7 @@ const NavItem = ({ to, children, pathname }) => {
   const selected = pathname ? pathname.toLowerCase() === to : false
 
   return (
-    <Link className="text-white navbar-item" to={to}>
+    <Link className="text-black navbar-item" to={to}>
       <NavItemText selected={selected}>{children}</NavItemText>
     </Link>
   )
@@ -66,7 +68,7 @@ const Navbar = ({ pathname }) => {
         >
           <Link to="/" className="navbar-item" title="Logo">
             <img
-              src={isMobile ? bnbLogoOrangeSmall : bnbLogoOrange}
+              src={isMobile ? bnbLogoBlackSmall : bnbLogoBlack}
               alt="BooksAndBuns"
               // Make sure max-height is none to respect the changes to width and height in logo svg
               // Had to do inline style due to bulma styling
@@ -76,7 +78,7 @@ const Navbar = ({ pathname }) => {
               }}
             />
             <LogoText>
-              books <Amper>&</Amper> buns
+              Books <Amper>&</Amper> Buns
             </LogoText>
           </Link>
           {/*                */}
@@ -88,7 +90,6 @@ const Navbar = ({ pathname }) => {
             style={{
               marginTop: '16px',
               marginRight: '16px',
-              color: COLOR_ORANGE,
             }}
           >
             <span />
