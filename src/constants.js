@@ -9,7 +9,7 @@ export const HEADER_COLOR = BACKGROUND_COLOR
 export const COLOR_1 = 'rgb(255, 68, 0)'
 export const COLOR_2 = 'grey'
 // Same as logo SVG color
-export const COLOR_ORANGE = 'rgb(224, 117, 71)'
+export const COLOR_ORANGE = 'rgb(202, 104, 66)'
 export const COLOR_ORANGE_HOVER = 'rgb(226 136 98)'
 // Same as logo SVG color
 export const COLOR_BLACK = '#4a4a4a'

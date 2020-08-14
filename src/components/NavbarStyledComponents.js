@@ -10,7 +10,6 @@ import {
 import { MainText } from '../styles/SharedStyledComponents'
 
 export const LogoText = styled.div`
-  font-family: 'Tw Cen Medium Regular';
   color: white;
   font-weight: 800;
   font-size: 40px;
