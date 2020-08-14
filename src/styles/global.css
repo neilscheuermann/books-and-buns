@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(218, 228, 245);
+  background-color: white;
 }
 
 strong {
@@ -53,12 +53,12 @@ strong {
 }
 
 /* Create custom css shape here http://androidcss.com/css-shape-icon-generator/# */
-.shape13{
+.icon-circle{
   display:inline-block!important;
   position:relative;
   width:12px;
   height:12px;
-  background:rgb(218, 228, 245);
+  background:white;
   border-radius:100%;
   border:calc(16px/10) solid rgb(184, 191, 204);
   box-sizing:content-box

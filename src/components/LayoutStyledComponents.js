@@ -8,7 +8,7 @@ import {
 
 const MAX_WIDTH_INT = 1336
 
-export const Content = styled.div`
+export const ContentStyled = styled.div`
   margin-bottom: 24px;
 
   ${/* Web */ ''}

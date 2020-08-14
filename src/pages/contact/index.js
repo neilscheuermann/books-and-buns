@@ -6,15 +6,18 @@ import {
   ContactHeader,
   Form,
   FormWrapper,
-  InputName,
-  InputSubject,
-  InputSubjectWrapper,
-  InputHalfWrapper,
-  InputEmail,
+  FormBackground,
+  Input,
+  InputWrapper,
+  InputHalfOrFullWrapper,
+  InputNameEmailWrapper,
   TextArea,
   TextAreaWrapper,
   Button,
-  ButtonText,
+  StyledText,
+  ContactInfoWrapper,
+  ContactItem,
+  ContactItemHeader,
 } from './ContactStyledComponents'
 
 function encode(data) {
@@ -44,7 +47,7 @@ export default class Index extends React.Component {
         ...this.state,
       }),
     })
-      .then(() => navigate(form.getAttribute('action')))
+      .then(() => navigate('/'))
       .catch((error) => alert(error))
   }
 
@@ -56,63 +59,75 @@ export default class Index extends React.Component {
     return (
       <Layout pathname={pathname}>
         <ContactHeader
-          style={{ marginTop: `${parseInt(HEADER_HEIGHT) + 64}px` }}
+          style={{
+            marginTop: `${parseInt(HEADER_HEIGHT) + 64}px`,
+            marginBottom: '0',
+          }}
         >
-          Connect with us
+          Request package details
         </ContactHeader>
+        <ContactHeader>or Connect with us</ContactHeader>
         <FormWrapper>
-          <Form
-            name="contact"
-            method="post"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-          >
-            {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="contact" />
-            {/* ============================================== */}
+          <FormBackground>
+            <Form
+              name="contact"
+              method="post"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+              <input type="hidden" name="bot-field" />
+              <input type="hidden" name="form-name" value="contact" />
+              {/* ============================================== */}
 
-            <div style={{ display: 'flex' }}>
-              <InputHalfWrapper style={{ marginRight: '8px' }}>
-                <InputName
+              <InputNameEmailWrapper>
+                <InputHalfOrFullWrapper marginRight8px>
+                  <Input type="text" name="name" id="name" placeholder="Name" />
+                </InputHalfOrFullWrapper>
+                <InputHalfOrFullWrapper marginLeft8px>
+                  <Input
+                    type="text"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
+                  />
+                </InputHalfOrFullWrapper>
+              </InputNameEmailWrapper>
+              <InputWrapper>
+                <Input
                   type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Name"
+                  name="subject"
+                  id="subject"
+                  placeholder="Subject"
                 />
-              </InputHalfWrapper>
-              <InputHalfWrapper style={{ marginLeft: '8px' }}>
-                <InputEmail
-                  type="text"
-                  name="email"
-                  id="email"
-                  placeholder="Email"
+              </InputWrapper>
+              <TextAreaWrapper>
+                <TextArea
+                  name="message"
+                  id="message"
+                  rows="6"
+                  placeholder="Message"
                 />
-              </InputHalfWrapper>
-            </div>
-            <InputSubjectWrapper>
-              <InputSubject
-                type="text"
-                name="subject"
-                id="subject"
-                placeholder="Subject"
-              />
-            </InputSubjectWrapper>
-            <TextAreaWrapper>
-              <TextArea
-                name="message"
-                id="message"
-                rows="6"
-                placeholder="Message"
-              />
-            </TextAreaWrapper>
-            <div className="actions">
-              <Button type="submit" value="Send Message">
-                <ButtonText>Send Message</ButtonText>
-              </Button>
-            </div>
-          </Form>
+              </TextAreaWrapper>
+              <div className="actions">
+                <Button type="submit" value="Send Message">
+                  <StyledText>Send Message</StyledText>
+                </Button>
+              </div>
+            </Form>
+          </FormBackground>
         </FormWrapper>
+        <ContactInfoWrapper>
+          <ContactItem>
+            <ContactItemHeader>Email</ContactItemHeader>
+            <StyledText>books.buns.co@gmail.com</StyledText>
+          </ContactItem>
+          <ContactItem>
+            <ContactItemHeader>Address</ContactItemHeader>
+            <StyledText>3267 E 3300 S #110</StyledText>
+            <StyledText>Salt Lake City, UT 84109</StyledText>
+          </ContactItem>
+        </ContactInfoWrapper>
       </Layout>
     )
   }

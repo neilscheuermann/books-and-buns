@@ -1,16 +1,21 @@
+import React from 'react'
 import styled from 'styled-components'
-import { BORDER_COLOR, SECONDARY_COLOR } from '../constants'
-import { SHADOW, TABLET_WIDTH_MAX_PLUS_1 } from '../constants'
+import { Link } from 'gatsby'
+import {
+  BORDER_COLOR,
+  TABLET_WIDTH_MAX,
+  TABLET_WIDTH_MAX_PLUS_1,
+  SECONDARY_COLOR,
+} from '../constants'
 import { MainText } from '../styles/SharedStyledComponents'
 
 export const LogoText = styled.div`
   font-family: 'Tw Cen Medium Regular';
-  color: #4a4a4a;
+  color: white;
   font-weight: 800;
   font-size: 40px;
   display: flex;
   align-items: center;
-  padding-bottom: 8px;
 `
 
 export const Amper = styled.div`
@@ -34,13 +39,28 @@ export const NavItemsWrapper = styled.div`
     display: flex;
   }
 `
+export const StyledLink = styled((props) => <Link {...props} />)`
+  color: white;
+  margin: 0 8px;
+`
 
 export const NavItemText = styled(MainText)`
+  ${/* Mobile or Tablet*/ ''}
+  @media (max-width: ${TABLET_WIDTH_MAX}) {
+    margin: 6px;
+  }
+
+  ${StyledLink}:hover {
+    color: black;
+  }
+
   ${({ selected }) =>
     selected &&
     `
       font-size: 1.7em;
       font-weight: 900;
+      display: inline-block;
+      border-bottom: 2px solid white;
 
       ${/* Web */ ''}
       @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {

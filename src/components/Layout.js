@@ -11,7 +11,7 @@ import useReactResponsive from '../hooks/useReactResponsive'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { TABLET_WIDTH_MAX } from '../constants'
-import { Content } from './LayoutStyledComponents'
+import { ContentStyled } from './LayoutStyledComponents'
 import GlobalFonts from '../fonts/fonts'
 
 const Example = () => {
@@ -47,11 +47,11 @@ const Example = () => {
   )
 }
 
-const DividerDots = () => {
+const NavDividerDots = () => {
   return (
     <>
       <i
-        class="shape13"
+        className="icon-circle"
         style={{
           position: 'fixed',
           left: 'calc(50% - 32px)',
@@ -60,7 +60,7 @@ const DividerDots = () => {
         }}
       ></i>
       <i
-        class="shape13"
+        className="icon-circle"
         style={{
           position: 'fixed',
           left: '50%',
@@ -69,7 +69,7 @@ const DividerDots = () => {
         }}
       ></i>
       <i
-        class="shape13"
+        className="icon-circle"
         style={{
           position: 'fixed',
           left: 'calc(50% + 32px)',
@@ -137,10 +137,10 @@ const TemplateWrapper = ({ children, pathname }) => {
       >
         <Navbar pathname={pathname} />
         {/* ===== ICON ===== */}
-        {!isMobile && <DividerDots />}
+        {!isMobile && <NavDividerDots />}
         {/* ========== */}
         <div>
-          <Content>{children}</Content>
+          <ContentStyled>{children}</ContentStyled>
         </div>
         {false && <Example />}
         <Footer />
