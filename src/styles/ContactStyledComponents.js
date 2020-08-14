@@ -7,6 +7,7 @@ import {
   COLOR_ORANGE_HOVER,
   TABLET_WIDTH_MAX,
   TABLET_WIDTH_MAX_PLUS_1,
+  HEADER_HEIGHT,
 } from '../constants'
 
 const FORM_WIDTH_INT = 750
@@ -19,19 +20,23 @@ export const ContactHeader = styled.h1`
   color: ${COLOR_BLACK};
   font-size: 2em;
   font-weight: 900;
-  margin-bottom: 32px;
+  margin-top: calc(${HEADER_HEIGHT} + 64px);
 
   ${/* Mobile or Tablet*/ ''}
   @media (max-width: ${TABLET_WIDTH_MAX}) {
     font-size: 1.7em;
+    margin-top: calc(${HEADER_HEIGHT} + 32px);
   }
 `
 
 // Form
 //
 export const FormWrapper = styled.div`
-  display: flex;
-  justify-content: center;
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    display: flex;
+    justify-content: center;
+  }
 `
 
 export const FormBackground = styled.div`

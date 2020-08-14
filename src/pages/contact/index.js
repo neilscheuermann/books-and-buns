@@ -1,7 +1,6 @@
 import React from 'react'
 import { navigate } from 'gatsby-link'
 import Layout from '../../components/Layout'
-import { HEADER_HEIGHT } from '../../constants'
 import {
   ContactHeader,
   Form,
@@ -59,13 +58,7 @@ export default class Index extends React.Component {
 
     return (
       <Layout pathname={pathname}>
-        <ContactHeader
-          style={{
-            marginTop: `${parseInt(HEADER_HEIGHT) + 64}px`,
-          }}
-        >
-          Connect with us
-        </ContactHeader>
+        <ContactHeader>Connect with us</ContactHeader>
         <div className="jc-center">
           <MainText style={{ width: '750px' }}>
             Since we work so closely with each project, availability is limited.
