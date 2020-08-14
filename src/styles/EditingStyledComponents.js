@@ -7,7 +7,7 @@ import {
   BACKGROUND_COLOR_LIGHT_BLUE,
   TABLET_WIDTH_MAX,
   TABLET_WIDTH_MAX_PLUS_1,
-} from '../../constants'
+} from '../constants'
 
 // Section 1
 //

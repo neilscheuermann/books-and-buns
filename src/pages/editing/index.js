@@ -12,7 +12,7 @@ import {
   SectionTextWrapper,
   StyledLink,
   ULStyled,
-} from './EditingStyledComponents'
+} from '../../styles/EditingStyledComponents'
 
 const LineDivider = () => (
   <div className="jc-center">

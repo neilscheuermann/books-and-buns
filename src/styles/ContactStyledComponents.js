@@ -7,7 +7,7 @@ import {
   COLOR_ORANGE_HOVER,
   TABLET_WIDTH_MAX,
   TABLET_WIDTH_MAX_PLUS_1,
-} from '../../constants'
+} from '../constants'
 
 const FORM_WIDTH_INT = 750
 

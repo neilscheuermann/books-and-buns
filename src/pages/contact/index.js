@@ -18,7 +18,7 @@ import {
   ContactInfoWrapper,
   ContactItem,
   ContactItemHeader,
-} from './ContactStyledComponents'
+} from '../../styles/ContactStyledComponents'
 import { MainText } from '../../styles/SharedStyledComponents'
 
 function encode(data) {
