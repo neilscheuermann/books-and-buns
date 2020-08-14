@@ -79,6 +79,9 @@ const IndexPage = ({ location: { pathname } }) => {
         </Section1>
       </div>
 
+      {/* Orange dot divider */}
+      {isMobile && <div class="divider div-transparent div-dot"></div>}
+
       <div>
         {/* <Section0> */}
         {/*   <Section0MainText className="jc-center"> */}

@@ -1,29 +1,68 @@
+import React from 'react'
 import styled from 'styled-components'
-import { COLOR_ORANGE, BACKGROUND_COLOR_LIGHT_BLUE } from '../../constants'
+import { Link } from 'gatsby'
+import {
+  COLOR_ORANGE,
+  COLOR_ORANGE_HOVER,
+  BACKGROUND_COLOR_LIGHT_BLUE,
+  TABLET_WIDTH_MAX,
+  TABLET_WIDTH_MAX_PLUS_1,
+} from '../../constants'
 
 // Section 1
 //
-export const Section1 = styled.div`
-  width: 880px;
+export const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: ${BACKGROUND_COLOR_LIGHT_BLUE};
   margin-top: 24px;
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    width: 80%;
+  }
+`
+
+export const Section = styled.div`
+  margin: 48px 0;
+  padding: 16px;
+
+  ${({ color }) => `background-color: ${color};`}
+
+  ${/* Mobile or Tablet*/ ''}
+  @media (max-width: ${TABLET_WIDTH_MAX}) {
+    margin: 0;
+    padding: 32px 16px;
+  }
 `
 
 export const SectionHeader = styled.h1`
   font-family: 'Tw Cen Medium Regular';
   font-size: 2em;
-  margin-top: 98px;
   text-decoration: underline;
 `
 
+export const SectionTextWrapper = styled.div`
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    padding: 0 102px;
+  }
+`
+
 export const Paragraph = styled.div`
-  width: calc(100% - 64px);
   margin: 16px;
-  background-color: white;
+`
+
+export const ULStyled = styled.ul`
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    width: 45%;
+  }
+`
+
+export const LIStyled = styled.li`
+  font-family: 'Tw Cen Medium Regular';
+  font-size: 1.5em;
 `
 
 export const ButtonWrapper = styled.div`
@@ -31,9 +70,14 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-right: 64px;
+
+  ${/* Mobile or Tablet*/ ''}
+  @media (max-width: ${TABLET_WIDTH_MAX}) {
+    margin: 16px;
+  }
 `
 
-export const Button = styled.button`
+export const StyledLink = styled((props) => <Link {...props} />)`
   font-family: 'Tw Cen Medium Regular';
   font-size: 2em;
   border: none;
@@ -41,4 +85,16 @@ export const Button = styled.button`
   color: white;
   background-color: ${COLOR_ORANGE};
   border-radius: 5px;
+
+  ${/* Mobile or Tablet*/ ''}
+  @media (max-width: ${TABLET_WIDTH_MAX}) {
+    width: 100%;
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  :hover {
+    color: white;
+    background-color: ${COLOR_ORANGE_HOVER};
+  }
 `

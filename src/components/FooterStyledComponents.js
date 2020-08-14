@@ -19,7 +19,7 @@ export const Wrapper = styled.footer`
 
   ${/* Mobile or Tablet*/ ''}
   @media (max-width: ${TABLET_WIDTH_MAX}) {
-    margin-bottom: 32px;
+    margin-bottom: 64px;
   }
 `
 
@@ -39,7 +39,7 @@ export const FontCredit = styled.div`
 
   ${/* Mobile or Tablet*/ ''}
   @media (max-width: ${TABLET_WIDTH_MAX}) {
-    bottom: -2px;
+    bottom: -16px;
     font-size: 0.8em;
     justify-content: center;
   }

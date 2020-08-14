@@ -19,6 +19,7 @@ import {
   ContactItem,
   ContactItemHeader,
 } from './ContactStyledComponents'
+import { MainText } from '../../styles/SharedStyledComponents'
 
 function encode(data) {
   return Object.keys(data)
@@ -61,12 +62,17 @@ export default class Index extends React.Component {
         <ContactHeader
           style={{
             marginTop: `${parseInt(HEADER_HEIGHT) + 64}px`,
-            marginBottom: '0',
           }}
         >
-          Request package details
+          Connect with us
         </ContactHeader>
-        <ContactHeader>or Connect with us</ContactHeader>
+        <div className="jc-center">
+          <MainText style={{ width: '750px' }}>
+            Since we work so closely with each project, availability is limited.
+            Please send us what you're interested in and we will create your
+            schedule.
+          </MainText>
+        </div>
         <FormWrapper>
           <FormBackground>
             <Form

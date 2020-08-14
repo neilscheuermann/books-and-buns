@@ -51,7 +51,6 @@ export default function Footer() {
           style={{ width: '1.5em', height: '1.5em' }}
         />
       </Link>
-      {/* TODO>>>: Add email link */}
       <FontCredit>
         Font made from{' '}
         <a href="http://www.onlinewebfonts.com">oNline Web Fonts</a> is licensed
