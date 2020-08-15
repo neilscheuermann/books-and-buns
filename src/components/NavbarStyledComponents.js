@@ -38,9 +38,23 @@ export const NavItemsWrapper = styled.div`
     display: flex;
   }
 `
+
 export const StyledLink = styled((props) => <Link {...props} />)`
   color: white;
   margin: 0 8px;
+`
+
+export const NavMenu = styled.div`
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  ${/* Mobile or Tablet*/ ''}
+  @media (max-width: ${TABLET_WIDTH_MAX}) {
+    background-color: ${BORDER_COLOR};
+  }
 `
 
 export const NavItemText = styled(MainText)`

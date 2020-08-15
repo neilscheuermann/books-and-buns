@@ -18,6 +18,7 @@ import {
 import {
   Amper,
   LogoText,
+  NavMenu,
   NavItemText,
   NavItemsWrapper,
   NavbarContentWrapper,
@@ -39,7 +40,10 @@ const Navbar = ({ pathname }) => {
   const [navBarActiveClass, setNavBarActiveClass] = useState('')
   const [hamburgerActive, setHamburgerActive] = useState(false)
   const { isMobile } = useReactResponsive()
-
+  const [isMobileTemp, setIsMobileTemp] = useState('')
+  useEffect(() => {
+    setIsMobileTemp(isMobile)
+  }, [isMobile])
   useEffect(() => {
     hamburgerActive ? setNavBarActiveClass('is-active') : setNavBarActiveClass()
   }, [hamburgerActive])
@@ -58,7 +62,7 @@ const Navbar = ({ pathname }) => {
         top: '0',
         left: '0',
         width: '100%',
-        height: isMobile ? HEADER_HEIGHT_MOBILE : HEADER_HEIGHT,
+        height: isMobileTemp ? HEADER_HEIGHT_MOBILE : HEADER_HEIGHT,
         backgroundColor: COLOR_ORANGE,
         borderBottom: `solid ${BORDER_COLOR} 1px`,
       }}
@@ -68,7 +72,7 @@ const Navbar = ({ pathname }) => {
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" title="Logo">
             <img
-              src={isMobile ? bnbLogoWhiteSmall : bnbLogoWhite}
+              src={isMobileTemp ? bnbLogoWhiteSmall : bnbLogoWhite}
               alt="BooksAndBuns"
               // Make sure max-height is none to respect the changes to width and height in logo svg
               // Had to do inline style due to bulma styling
@@ -100,17 +104,9 @@ const Navbar = ({ pathname }) => {
           {/* ------------ */}
           {/*              */}
         </div>
-        <div
-          id="navMenu"
-          className={`navbar-menu ${navBarActiveClass}`}
-          style={
-            isMobile
-              ? { backgroundColor: BORDER_COLOR }
-              : { display: 'flex', justifyContent: 'flex-end' }
-          }
-        >
+        <NavMenu id="navMenu" className={`navbar-menu ${navBarActiveClass}`}>
           <NavItemsWrapper
-            className={isMobile ? 'navbar-start has-text-centered' : ''}
+            className={isMobileTemp ? 'navbar-start has-text-centered' : ''}
           >
             <NavItem pathname={pathname} to="/">
               Home
@@ -127,7 +123,7 @@ const Navbar = ({ pathname }) => {
             </NavItem>
             {/* <NavItem pathname={pathname} to="/contact/examples">Form Examples</NavItem> */}
           </NavItemsWrapper>
-        </div>
+        </NavMenu>
       </NavbarContentWrapper>
     </nav>
   )
