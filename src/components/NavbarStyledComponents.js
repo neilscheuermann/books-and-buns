@@ -15,6 +15,11 @@ export const LogoText = styled.div`
   font-size: 40px;
   display: flex;
   align-items: center;
+
+  ${/* Mobile or Tablet*/ ''}
+  @media (max-width: ${TABLET_WIDTH_MAX}) {
+    font-size: 30px;
+  }
 `
 
 export const Amper = styled.div`
@@ -23,6 +28,8 @@ export const Amper = styled.div`
 `
 
 export const NavbarContentWrapper = styled.div`
+  height: inherit;
+
   ${/* Web */ ''}
   @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
     min-height: 3.25rem;
@@ -30,6 +37,11 @@ export const NavbarContentWrapper = styled.div`
     display: flex;
     justify-content: space-between;
   }
+`
+export const NavbarBrandStyled = styled.div`
+  height: inherit;
+  display: flex;
+  align-items: center;
 `
 
 export const NavItemsWrapper = styled.div`

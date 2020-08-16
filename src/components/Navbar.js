@@ -23,6 +23,7 @@ import {
   NavItemsWrapper,
   NavbarContentWrapper,
   StyledLink,
+  NavbarBrandStyled,
 } from './NavbarStyledComponents'
 import { MainText } from '../styles/SharedStyledComponents'
 
@@ -69,7 +70,7 @@ const Navbar = ({ pathname }) => {
     >
       {/* <div className="container"> */}
       <NavbarContentWrapper className="container">
-        <div className="navbar-brand">
+        <NavbarBrandStyled className="navbar-brand">
           <Link to="/" className="navbar-item" title="Logo">
             <img
               src={isMobileTemp ? bnbLogoWhiteSmall : bnbLogoWhite}
@@ -92,7 +93,6 @@ const Navbar = ({ pathname }) => {
             data-target="navMenu"
             onClick={() => toggleHamburger()}
             style={{
-              marginTop: '16px',
               marginRight: '16px',
               color: 'white',
             }}
@@ -103,7 +103,7 @@ const Navbar = ({ pathname }) => {
           </div>
           {/* ------------ */}
           {/*              */}
-        </div>
+        </NavbarBrandStyled>
         <NavMenu id="navMenu" className={`navbar-menu ${navBarActiveClass}`}>
           <NavItemsWrapper
             className={isMobileTemp ? 'navbar-start has-text-centered' : ''}

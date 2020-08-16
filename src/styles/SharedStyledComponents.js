@@ -29,8 +29,8 @@ export const HeaderImage = styled.div`
 
   ${/* Mobile or Tablet*/ ''}
   @media (max-width: ${TABLET_WIDTH_MAX}) {
-    background-position: center center;
-    background-size: cover;
+    background-position: 45% center;
+    background-size: 190%;
     margin-top: 90px;
   }
 `
