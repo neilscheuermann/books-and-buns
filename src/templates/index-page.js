@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import useReactResponsive from '../hooks/useReactResponsive'
-import bethLindsTable from '../img/beth-linds-table.jpg'
+import bethLindsPiggyBack from '../img/beth-linds-piggy-back.jpg'
 import bethLindsSaltLake from '../img/beth-linds-salt-lake.jpg'
 import lindsayImg from '../img/lindsay-square.jpg'
 import bethHatImg from '../img/beth-hat-square.jpg'
@@ -10,7 +10,7 @@ import {
   Section1Header,
   Section1,
   Section1TextWrapper,
-  Section1WelcomeText,
+  // Section1WelcomeText,
   Section2,
   Section2Image,
   Section2TextContent,
@@ -72,7 +72,7 @@ const IndexPage = ({ location: { pathname } }) => {
             </div>
           </Section1TextWrapper>
           <Section1Img
-            src={bethLindsTable}
+            src={bethLindsPiggyBack}
             alt="Lindsay and Bethany"
             className="border box-shadow"
           />
@@ -102,11 +102,13 @@ const IndexPage = ({ location: { pathname } }) => {
             <Section2TextContent>
               <MainText style={{ fontSize: '2em' }}>Hey there,</MainText>
               <MainText>
-                I'm Lin. Reading has always provided me a safe-haven, so now
-                bringing stories into existence is my life. I get passionate
-                about stories because they frame the way we understand our
-                lives. If you have a story to tell, I am here to share my
-                expertise and encouragement.
+                I’m Lindsay. Seven years ago, I wanted to write a book, but had
+                no idea where to start. I went to conferences, read books,
+                listened to podcasts and wrote a lot. Basically I learned the
+                hard way so that you don’t have to. Whether you need hand
+                holding from beginning to end, or just another set of eyes on
+                your finished manuscript, I’m here to help! Think of me as your
+                book coach and #1 fan rolled up in one.
               </MainText>
             </Section2TextContent>
           </Section2>

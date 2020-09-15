@@ -43,7 +43,7 @@ export const Section1Header = styled.h1`
 export const Section1Img = styled.img`
   ${/* Web */ ''}
   @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
-    width: 60%;
+    width: 40%;
     object-fit: cover;
     margin: 16px;
   }
