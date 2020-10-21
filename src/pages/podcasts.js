@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import useReactResponsive from '../hooks/useReactResponsive'
-import { COLOR_BLACK, FONT_FAMILY, TABLET_WIDTH_MAX_PLUS_1 } from '../constants'
+import {
+  COLOR_BLACK,
+  COLOR_ORANGE,
+  COLOR_ORANGE_HOVER,
+  FONT_FAMILY,
+  TABLET_WIDTH_MAX_PLUS_1,
+} from '../constants'
 import colorBun from '../img/icons-and-logos/color-bun-200px.svg'
 import colorBunSmall from '../img/icons-and-logos/color-bun-100px.svg'
 import Layout from '../components/Layout'
@@ -24,7 +30,7 @@ export default function Podcasts({ location: { pathname } }) {
           }}
         >
           <ColorBunsSticker
-            src={isMobileTemp ? colorBunSmall : colorBun}
+            src={colorBunSmall}
             alt="logo of cartoon woman head with colorful bun"
             // Make sure max-height is none to respect the changes to width and height in logo svg
             // Had to do inline style due to bulma styling
@@ -32,7 +38,57 @@ export default function Podcasts({ location: { pathname } }) {
               maxHeight: 'none',
             }}
           />
-          <Text>Podcasts coming October 6th!</Text>
+          <Header>The Books and Buns Podcast</Header>
+          <a
+            href="https://booksandbuns.podbean.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button>Visit our home page at PodBeam!</button>
+          </a>
+          <ul>
+            <p>
+              <a
+                href="https://booksandbuns.podbean.com/e/why-we-edit-novels/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Episode #1
+              </a>
+              - Why We Edit Novels
+            </p>
+            <p>
+              <a
+                href="https://booksandbuns.podbean.com/e/the-nutshell-technique/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Episode #2
+              </a>
+              - The Nutshell Technique
+            </p>
+            <p>
+              <a
+                href="https://booksandbuns.podbean.com/e/dynamic-secondary-characters/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Episode #3
+              </a>
+              - Dynamic Secondary Characters
+            </p>
+            <p>
+              Episode #4 - with{' '}
+              <a
+                href="https://www.authoramyharmon.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Amy Harmon
+              </a>
+              , coming October 27th!
+            </p>
+          </ul>
         </div>
       </Wrapper>
     </Layout>
@@ -40,24 +96,23 @@ export default function Podcasts({ location: { pathname } }) {
 }
 
 const ColorBunsSticker = styled.img`
-  margin: 32px;
+  margin: 16px;
   border: 1px solid ${COLOR_BLACK};
   border-radius: 56%;
   padding: 10px;
   box-shadow: 3px 5px ${COLOR_BLACK};
 `
 
-const Text = styled.h1`
+const Header = styled.h1`
   font-family: ${FONT_FAMILY};
   color: ${COLOR_BLACK};
-  font-size: 2.5em;
+  font-size: 2em;
   display: flex;
   text-align: center;
 
   ${/* Web */ ''}
   @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
     font-size: 4em;
-    transform: rotate(-3deg);
   }
 `
 
@@ -65,5 +120,47 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 90px;
+
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    margin-top: 150px;
+  }
+
+  p {
+    font-size: 1.5em;
+    font-family: ${FONT_FAMILY};
+  }
+
+  ul > p {
+    margin: 16px;
+  }
+
+  button {
+    font-family: ${FONT_FAMILY};
+    font-size: 1.4em;
+    border: none;
+    border-radius: 30px;
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 24px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    background-color: ${COLOR_ORANGE};
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 1px 2px 0px 0px ${COLOR_BLACK};
+
+  ${/* Web */ ''}
+  @media only screen and (min-width: ${TABLET_WIDTH_MAX_PLUS_1}) {
+    margin: 16px;
+  }
+
+    :hover {
+      background-color: ${COLOR_ORANGE_HOVER};
+    }
+  }
 `
