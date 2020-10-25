@@ -39,13 +39,6 @@ export default function Podcasts({ location: { pathname } }) {
             }}
           />
           <Header>The Books and Buns Podcast</Header>
-          <a
-            href="https://booksandbuns.podbean.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <button>Visit our home page at PodBeam!</button>
-          </a>
           <ul>
             <p>
               <a
