@@ -47,7 +47,7 @@ export default function Podcasts({ location: { pathname } }) {
                 rel="noreferrer"
               >
                 Episode #1
-              </a>
+              </a>{' '}
               - Why We Edit Novels
             </p>
             <p>
@@ -57,7 +57,7 @@ export default function Podcasts({ location: { pathname } }) {
                 rel="noreferrer"
               >
                 Episode #2
-              </a>
+              </a>{' '}
               - The Nutshell Technique
             </p>
             <p>
@@ -67,11 +67,18 @@ export default function Podcasts({ location: { pathname } }) {
                 rel="noreferrer"
               >
                 Episode #3
-              </a>
+              </a>{' '}
               - Dynamic Secondary Characters
             </p>
             <p>
-              Episode #4 - with{' '}
+              <a
+                href="https://booksandbuns.podbean.com/e/writing-wisdom-from-amy-harmon/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Episode #4
+              </a>{' '}
+              - Writing Wisdom from{' '}
               <a
                 href="https://www.authoramyharmon.com/"
                 target="_blank"
@@ -79,7 +86,6 @@ export default function Podcasts({ location: { pathname } }) {
               >
                 Amy Harmon
               </a>
-              , coming October 27th!
             </p>
           </ul>
         </div>
