@@ -15,7 +15,7 @@ export default function Blog() {
     <div className="jc-center">
       <WrapperStyles>
         <div className="jc-center">
-          <h1>Bakin' with Books and Buns</h1>
+          <h1>Monster Cookies</h1>
         </div>
         <div className="jc-center">
           <img src={cookiesImg} alt="" />
