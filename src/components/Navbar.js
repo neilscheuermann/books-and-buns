@@ -117,7 +117,9 @@ const Navbar = ({ pathname }) => {
             <NavItem pathname={pathname} to="/podcasts">
               Podcasts
             </NavItem>
-            {/* <NavItem pathname={pathname} to="/blog">Books</NavItem> */}
+            <NavItem pathname={pathname} to="/blog">
+              Blog
+            </NavItem>
             <NavItem pathname={pathname} to="/contact">
               Connect
             </NavItem>
