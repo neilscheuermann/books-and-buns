@@ -87,6 +87,44 @@ export default function Podcasts({ location: { pathname } }) {
                 Amy Harmon
               </a>
             </p>
+            <p>
+              <a
+                href="https://booksandbuns.podbean.com/e/surviving-nanowrimo/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Episode #5
+              </a>{' '}
+              - Surviving NaNoWriMo
+            </p>
+            <p>
+              <a
+                href="https://booksandbuns.podbean.com/e/a-space-to-create/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Episode #6
+              </a>{' '}
+              - A Space to Create
+            </p>
+            <p>
+              <a
+                href="https://booksandbuns.podbean.com/e/outlining-and-publishing-insights-with-charlie-n-holmberg/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Episode #7
+              </a>{' '}
+              - Outlining and Publishing Insights with
+              <a
+                href="https://charlienholmberg.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {' '}
+                Charlie N. Holmberg
+              </a>
+            </p>
           </ul>
         </div>
       </Wrapper>
